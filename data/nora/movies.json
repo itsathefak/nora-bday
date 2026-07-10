@@ -1,0 +1,14 @@
+[
+  {
+    "id": "nora-movie-1",
+    "title": "Birthday Dream",
+    "subtitle": "A night of candlelit wishes",
+    "poster": "/images/nora/movie-1.svg"
+  },
+  {
+    "id": "nora-movie-2",
+    "title": "Starlight Journey",
+    "subtitle": "A cozy story for Nora",
+    "poster": "/images/nora/movie-2.svg"
+  }
+]

@@ -1,0 +1,13 @@
+[
+  { "id": "m1", "slug": "nora-1", "title": "Nora Short", "subtitle": "Clip", "thumbnail": "/images/nora/movie-1.svg", "year": 2025 },
+  { "id": "m2", "slug": "nora-2", "title": "Birthday Montage", "subtitle": "Original", "thumbnail": "/images/nora/movie-2.svg", "year": 2024 },
+  { "id": "m3", "slug": "nora-3", "title": "Cozy Cat", "subtitle": "Shorts", "thumbnail": "/images/nora/original-1.svg", "year": 2023 },
+  { "id": "m4", "slug": "nora-4", "title": "Hamster Race", "subtitle": "Clip", "thumbnail": "/images/nora/movie-1.svg", "year": 2022 },
+  { "id": "m5", "slug": "nora-5", "title": "Comfort Food", "subtitle": "Collection", "thumbnail": "/images/nora/movie-2.svg", "year": 2021 },
+  { "id": "m6", "slug": "nora-6", "title": "Late Night Drive", "subtitle": "Moment", "thumbnail": "/images/nora/original-1.svg", "year": 2020 },
+  { "id": "m7", "slug": "nora-7", "title": "Piggy Play", "subtitle": "Clip", "thumbnail": "/images/nora/movie-1.svg", "year": 2019 },
+  { "id": "m8", "slug": "nora-8", "title": "Soft Lights", "subtitle": "Short", "thumbnail": "/images/nora/movie-2.svg", "year": 2018 },
+  { "id": "m9", "slug": "nora-9", "title": "Chaos Theory", "subtitle": "Collection", "thumbnail": "/images/nora/original-1.svg", "year": 2017 },
+  { "id": "m10", "slug": "nora-10", "title": "Originals Vol 1", "subtitle": "Original", "thumbnail": "/images/nora/movie-1.svg", "year": 2016 },
+  { "id": "m11", "slug": "nora-11", "title": "Birthday Special", "subtitle": "Event", "thumbnail": "/images/nora/movie-2.svg", "year": 2015 }
+]

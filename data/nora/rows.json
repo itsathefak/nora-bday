@@ -1,0 +1,11 @@
+[
+  { "id": "featured", "title": "Featured", "items": ["m1","m2","m3","m4","m5"] },
+  { "id": "continue", "title": "Continue Watching", "items": ["m6","m7","m8"] },
+  { "id": "cinematic", "title": "The Nora Cinematic Universe", "items": ["m9","m10","m11"] },
+  { "id": "originals", "title": "Nora Originals", "items": ["m2","m4","m10"] },
+  { "id": "comfort", "title": "Comfort Collection", "items": ["m3","m5","m8"] },
+  { "id": "chaos", "title": "Chaos Collection", "items": ["m1","m6","m9"] },
+  { "id": "picks", "title": "Atna’s Picks", "items": ["m4","m7","m11"] },
+  { "id": "top10", "title": "Top 10 Nora Moments", "items": ["m1","m2","m3","m4","m5","m6"] },
+  { "id": "birthday", "title": "Birthday Special", "items": ["m11","m5","m2"] }
+]
