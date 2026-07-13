@@ -1,0 +1,17 @@
+[
+  {
+    "id": "games",
+    "title": "Games",
+    "type": "carousel",
+    "items": [
+      "dauda-game-wheel-champion",
+      "dauda-game-hamster-maze",
+      "dauda-game-catch-the-seeds",
+      "dauda-game-where-did-dauda-hide-it",
+      "dauda-game-build-daudas-home",
+      "dauda-game-memory-match",
+      "dauda-game-find-dauda",
+      "dauda-game-snack-sort"
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "label": "DAUDA STUDIOS ORIGINAL",
+    "title": "Dauda: Tiny Body, Big Drama",
+    "matchText": "🌻 #1 Seed Hoarder in the House",
+    "description": "Meet Dauda — professional seed collector, full-time tunnel engineer, and the smallest member of the house with the biggest personality. His daily schedule includes running suspicious distances on the wheel, hiding snacks in places no one remembers, reorganizing his bedding, and pretending he has never been fed before.",
+    "details": [
+      { "label": "Genre", "value": "Comedy • Tiny Adventures • Games • Snacks" },
+      { "label": "Occupation", "value": "Professional Seed Hoarder" },
+      { "label": "Favourite Things", "value": "Sunflower Seeds • Tunnels • Running • Tiny Naps" },
+      { "label": "Special Skills", "value": "Speed • Snack Storage • Escaping Responsibility" },
+      { "label": "Status", "value": "Currently Hiding Food Somewhere" }
+    ],
+    "buttons": [
+      { "type": "games", "label": "🎮 Play Games", "icon": "" }
+    ],
+    "footerText": "Made exclusively for Dauda • Powered by Seeds & Tiny Chaos 🐹",
+    "backdropImage": "/videos/dauda/daud.png",
+    "backdropVideo": "/videos/dauda/daud.mp4",
+    "backgroundObjects": ["🌻", "•", "🐾", "⌒"]
+  }
+}

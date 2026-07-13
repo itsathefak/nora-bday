@@ -5,11 +5,10 @@
     "matchText": "❤️ #1 in Atna's Heart Today",
     "description": "Happy Birthday, Nora bb ❤️\n\nWelcome to your own little corner of the internet. Every memory, every adventure, every laugh, every late-night drive, and every little moment we've shared now has a home here.\n\nSo grab some snacks, get comfy, and let's relive our favorite story together.",
     "buttons": [
-      { "type": "play", "label": "Play Trailer" },
-      { "type": "info", "label": "More Info" }
+      { "type": "play", "label": "Play Trailer" }
     ],
     "footerText": "Made exclusively for Nora • Since April 2025 ❤️",
-    "backdropImage": "/images/nora/movie-1.svg",
+    "backdropImage": "/videos/nora/nora banner.png",
     "backdropVideo": "/videos/nora/StoryExport.mp4"
   },
   "rows": []

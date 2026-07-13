@@ -1,0 +1,79 @@
+{
+  "image": "/videos/piggy/games/find-piggy/find-piggy-scene.png",
+  "totalPiggies": 9,
+  "timeLimit": 90,
+  "targets": [
+    {
+      "id": "piggy-1",
+      "x": 7.8,
+      "y": 0.6,
+      "width": 10.1,
+      "height": 11.7,
+      "hint": "Look somewhere high on the left shelf."
+    },
+    {
+      "id": "piggy-2",
+      "x": 79.8,
+      "y": 0.6,
+      "width": 8.4,
+      "height": 9.8,
+      "hint": "Check the high shelf on the right."
+    },
+    {
+      "id": "piggy-3",
+      "x": 57.9,
+      "y": 32.4,
+      "width": 7.4,
+      "height": 8.6,
+      "hint": "Something suspicious is near the plant."
+    },
+    {
+      "id": "piggy-4",
+      "x": 15.4,
+      "y": 43.3,
+      "width": 9.5,
+      "height": 10.5,
+      "hint": "Scan the couch cushions on the left."
+    },
+    {
+      "id": "piggy-5",
+      "x": 33.6,
+      "y": 34.2,
+      "width": 9,
+      "height": 8.9,
+      "hint": "Look near the middle of the couch."
+    },
+    {
+      "id": "piggy-6",
+      "x": 84.5,
+      "y": 36.2,
+      "width": 4.9,
+      "height": 8.5,
+      "hint": "Peek beside the big chair."
+    },
+    {
+      "id": "piggy-7",
+      "x": 82.8,
+      "y": 55.4,
+      "width": 8.3,
+      "height": 8.1,
+      "hint": "Search around the cardboard box."
+    },
+    {
+      "id": "piggy-8",
+      "x": 62.3,
+      "y": 82,
+      "width": 10.1,
+      "height": 10.2,
+      "hint": "One Porky is tucked under something cozy."
+    },
+    {
+      "id": "piggy-9",
+      "x": 4.2,
+      "y": 65.1,
+      "width": 13.3,
+      "height": 13.9,
+      "hint": "Look low on the left side."
+    }
+  ]
+}

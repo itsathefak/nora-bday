@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "image": "/videos/piggy/games/when-where/1.png",
+    "locationQuestion": "Where was this photo taken?",
+    "locationOptions": ["Conestoga Mall", "Square One", "Yorkdale", "Eaton Centre"],
+    "correctLocation": "Conestoga Mall",
+    "dateQuestion": "When was this photo taken?",
+    "dateOptions": ["November 2025", "April 2025", "June 2025", "September 2025"],
+    "correctDate": "November 2025",
+    "funFact": "Piggy was probably judging everyone's shopping choices."
+  },
+  {
+    "id": 2,
+    "image": "/videos/piggy/games/when-where/2.png",
+    "locationQuestion": "Where was this photo taken?",
+    "locationOptions": ["CF", "Walmart", "Costco", "Independent Grocers"],
+    "correctLocation": "CF",
+    "dateQuestion": "When was this photo taken?",
+    "dateOptions": ["April 2025", "November 2025", "July 2025", "June 2026"],
+    "correctDate": "April 2025",
+    "funFact": "Piggy was likely wondering where the snack aisle was."
+  },
+  {
+    "id": 3,
+    "image": "/videos/piggy/games/when-where/3.png",
+    "locationQuestion": "Where was this photo taken?",
+    "locationOptions": ["Waterloo Park", "Pork Trail", "Victoria Park", "UW"],
+    "correctLocation": "Waterloo Park",
+    "dateQuestion": "When was this photo taken?",
+    "dateOptions": ["June 2026", "May 2025", "September 2025", "April 2025"],
+    "correctDate": "June 2026",
+    "funFact": "Piggy was enjoying nature, but would still trade it all for treats."
+  },
+  {
+    "id": 4,
+    "image": "/videos/piggy/games/when-where/4.png",
+    "locationQuestion": "Where was this photo taken?",
+    "locationOptions": ["UW", "Pork Trail", "Victoria Park", "Waterloo Park"],
+    "correctLocation": "UW",
+    "dateQuestion": "When was this photo taken?",
+    "dateOptions": ["May 2025", "June 2025", "July 2025", "November 2025"],
+    "correctDate": "May 2025",
+    "funFact": "Piggy briefly considered becoming a campus celebrity."
+  },
+  {
+    "id": 5,
+    "image": "/videos/piggy/games/when-where/5.png",
+    "locationQuestion": "Where was this photo taken?",
+    "locationOptions": ["Toronto Island", "Trail", "Victoria Park", "Waterloo Park"],
+    "correctLocation": "Toronto Island",
+    "dateQuestion": "When was this photo taken?",
+    "dateOptions": ["September 2025", "June 2025", "April 2025", "July 2025"],
+    "correctDate": "September 2025",
+    "funFact": "Piggy had island energy, which mostly means looking majestic and hungry."
+  },
+  {
+    "id": 6,
+    "image": "/videos/piggy/games/when-where/6.png",
+    "locationQuestion": "Where was this photo taken?",
+    "locationOptions": ["The Well", "Conestoga Mall", "UW", "CIBC Square"],
+    "correctLocation": "The Well",
+    "dateQuestion": "When was this photo taken?",
+    "dateOptions": ["July 2025", "May 2025", "September 2025", "November 2025"],
+    "correctDate": "July 2025",
+    "funFact": "Piggy inspected the vibes and found them snack-compatible."
+  },
+  {
+    "id": 7,
+    "image": "/videos/piggy/games/when-where/7.png",
+    "locationQuestion": "Where was this photo taken?",
+    "locationOptions": ["Mississauga", "Toronto", "Waterloo", "Kitchener"],
+    "correctLocation": "Mississauga",
+    "dateQuestion": "When was this photo taken?",
+    "dateOptions": ["June 2025", "April 2025", "July 2025", "September 2025"],
+    "correctDate": "June 2025",
+    "funFact": "Piggy was in Mississauga, probably still thinking about dinner."
+  }
+]

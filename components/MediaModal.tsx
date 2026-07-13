@@ -35,13 +35,12 @@ export function MediaModal({
   item?: MediaItem | null;
   onClose: () => void;
   autoplay?: boolean;
-  onToggleFavorite?: (id?: string) => void;
+  onToggleFavorite?: (item?: MediaItem | null) => void;
   isFavorite?: boolean;
 }) {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [fullscreenOpen, setFullscreenOpen] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const fullscreenRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     if (open) {
@@ -66,7 +65,31 @@ export function MediaModal({
 
   if (!item) return null;
 
-  const previewVideo = isPlaying ? item.video || item.backdropVideo || item.trailer : undefined;
+  const videoSrc = item.video || item.backdropVideo || item.trailer;
+  const previewVideo = isPlaying ? videoSrc : undefined;
+
+  const playFullscreen = () => {
+    if (!videoSrc) return;
+
+    setIsPlaying(true);
+
+    setTimeout(() => {
+      const video = videoRef.current as (HTMLVideoElement & {
+        webkitEnterFullscreen?: () => void;
+      }) | null;
+
+      if (!video) return;
+
+      video.muted = false;
+      video.play().catch(() => {});
+
+      if (video.requestFullscreen) {
+        video.requestFullscreen().catch(() => {});
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      }
+    }, 50);
+  };
 
   return (
     <AnimatePresence>
@@ -110,12 +133,13 @@ export function MediaModal({
             <div className="relative w-full h-[44vh] md:h-[48vh] lg:h-[48vh] rounded-t-2xl overflow-hidden bg-black">
               {previewVideo ? (
                 <video
+                  ref={videoRef}
                   src={previewVideo}
                   autoPlay
                   muted
                   controls
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-black"
                 />
               ) : item.backdropImage ? (
                 <img src={item.backdropImage} alt={item.title} className="w-full h-full object-cover" />
@@ -150,32 +174,23 @@ export function MediaModal({
 
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <button
-                      onClick={() => {
-                        // start inline playback and open fullscreen player
-                        setIsPlaying(true);
-                        setFullscreenOpen(true);
-                        // request fullscreen on the fullscreen container when available
-                        setTimeout(() => {
-                          const el = fullscreenRef.current as any;
-                          try {
-                            if (el && el.requestFullscreen) el.requestFullscreen();
-                          } catch (e) {
-                            // ignore
-                          }
-                        }, 80);
-                      }}
+                      onClick={playFullscreen}
+                      disabled={!videoSrc}
                       className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-black font-semibold"
                     >
                       ▶ Play
                     </button>
 
                     <button
-                      onClick={() => onToggleFavorite && onToggleFavorite(item.id)}
-                      className="inline-flex items-center gap-2 rounded-md bg-white/6 px-3 py-2 text-white/90"
+                      onClick={() => onToggleFavorite && onToggleFavorite(item)}
+                      className={`inline-flex items-center gap-2 rounded-md px-3 py-2 font-semibold transition ${
+                        isFavorite
+                          ? "bg-red-600 text-white hover:bg-red-500"
+                          : "bg-white/6 text-white/90 hover:bg-white/10"
+                      }`}
                     >
-                      {isFavorite ? "♥" : "♡"} Add to Heart
+                      {isFavorite ? "❤️ Kept Forever" : "❤️ Keep Forever"}
                     </button>
-                    <button className="inline-flex items-center gap-2 rounded-md bg-white/6 px-3 py-2 text-white/90">More Info</button>
                   </div>
                 </div>
               </div>

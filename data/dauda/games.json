@@ -1,8 +1,90 @@
 [
   {
-    "id": "dauda-game-1",
-    "title": "Wheel Rush",
-    "subtitle": "Speedy hamster fun",
-    "poster": "/images/dauda/game-1.svg"
+    "id": "dauda-game-wheel-champion",
+    "slug": "wheel-champion",
+    "title": "Wheel Champion",
+    "description": "Press as fast as you can to help Dauda sprint on the wheel and become a tiny household legend.",
+    "futureGameplay": "Repeatedly press Space or tap a large mobile button. Dauda’s wheel spins faster with every press during 20–30 second rounds while tracking speed, distance, best score, stamina, and funny finish messages.",
+    "thumbnail": "/videos/dauda/games/wheel-champion/wheel-champion.png",
+    "route": "/profile/dauda/games/wheel-champion",
+    "order": 1,
+    "enabled": true
+  },
+  {
+    "id": "dauda-game-hamster-maze",
+    "slug": "hamster-maze",
+    "title": "Hamster Maze",
+    "description": "Guide Dauda through a tiny maze, collect every seed, and reach home before time runs out.",
+    "futureGameplay": "Use arrow keys, WASD, or touch controls to collect sunflower seeds, avoid dead ends and simple obstacles, and play through multiple difficulty levels.",
+    "thumbnail": "/videos/dauda/games/hamster-maze/hamster-maze.png",
+    "route": "/profile/dauda/games/hamster-maze",
+    "order": 2,
+    "enabled": true
+  },
+  {
+    "id": "dauda-game-catch-the-seeds",
+    "slug": "catch-the-seeds",
+    "title": "Catch the Seeds",
+    "description": "Help Dauda catch falling seeds, build huge combos, and avoid the suspicious foods raining from above.",
+    "futureGameplay": "Catch sunflower seeds, pumpkin seeds, and treats while avoiding bad or funny falling objects with a combo system, timer, high score, keyboard controls, and touch controls.",
+    "thumbnail": "/videos/dauda/games/catch-seeds/catch-the-seeds.png",
+    "route": "/profile/dauda/games/catch-the-seeds",
+    "order": 3,
+    "enabled": true
+  },
+  {
+    "id": "dauda-game-where-did-dauda-hide-it",
+    "slug": "where-did-dauda-hide-it",
+    "title": "Where Did Dauda Hide It?",
+    "description": "Watch carefully, remember Dauda’s hiding place, and find the snack before she forgets where she put it.",
+    "futureGameplay": "Show a room or habitat image with clickable hiding spots, then reveal whether the snack was hidden in the tunnel, bedding, house, bowl, or wheel across multiple scored rounds.",
+    "thumbnail": "/videos/dauda/games/hide-it/where-did-dauda-hide-it.png",
+    "route": "/profile/dauda/games/where-did-dauda-hide-it",
+    "order": 4,
+    "enabled": true
+  },
+  {
+    "id": "dauda-game-build-daudas-home",
+    "slug": "build-daudas-home",
+    "title": "Build Dauda’s Home",
+    "description": "Arrange Dauda’s wheel, house, tunnels, bowl, bridge, and bedding to create the perfect tiny home.",
+    "futureGameplay": "Drag and place habitat objects, snap items into valid areas, watch Dauda react to each choice, and show a final habitat rating.",
+    "thumbnail": "/images/dauda/game-1.svg",
+    "route": "/profile/dauda/games/build-daudas-home",
+    "order": 5,
+    "enabled": true
+  },
+  {
+    "id": "dauda-game-memory-match",
+    "slug": "memory-match",
+    "title": "Dauda Memory Match",
+    "description": "Flip the cards and match Dauda photos, seeds, tunnels, wheels, and tiny treasures.",
+    "futureGameplay": "Use 10 unique images duplicated into 20 cards, track moves and completion time, and save the best score in localStorage.",
+    "thumbnail": "/images/dauda/game-1.svg",
+    "route": "/profile/dauda/games/memory-match",
+    "order": 6,
+    "enabled": true
+  },
+  {
+    "id": "dauda-game-find-dauda",
+    "slug": "find-dauda",
+    "title": "Find Dauda",
+    "description": "Search Dauda’s tiny world and click every hidden hamster before he disappears into the bedding.",
+    "futureGameplay": "Play a hidden-object scene with several Daudas hidden at different sizes, a timer, hints, score, and clickable percentage-based target areas.",
+    "thumbnail": "/images/dauda/game-1.svg",
+    "route": "/profile/dauda/games/find-dauda",
+    "order": 7,
+    "enabled": true
+  },
+  {
+    "id": "dauda-game-snack-sort",
+    "slug": "snack-sort",
+    "title": "Dauda’s Snack Sort",
+    "description": "Sort Dauda’s favourite seeds and safe snacks from the foods he should reject.",
+    "futureGameplay": "Drag items into Dauda Approved or Dauda Says No, then track mistakes, time, score, and funny Dauda reactions.",
+    "thumbnail": "/images/dauda/game-1.svg",
+    "route": "/profile/dauda/games/snack-sort",
+    "order": 8,
+    "enabled": true
   }
 ]

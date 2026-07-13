@@ -1,0 +1,76 @@
+{
+  "duration": 60,
+  "startingLives": 3,
+  "items": [
+    {
+      "id": "sunflower-seed",
+      "name": "Sunflower Seed",
+      "image": "/videos/dauda/games/catch-seeds/sunflower-seed.png",
+      "type": "good",
+      "points": 10
+    },
+    {
+      "id": "pumpkin-seed",
+      "name": "Pumpkin Seed",
+      "image": "/videos/dauda/games/catch-seeds/pumpkin-seed.png",
+      "type": "good",
+      "points": 15
+    },
+    {
+      "id": "peanut",
+      "name": "Peanut",
+      "image": "/videos/dauda/games/catch-seeds/peanut.png",
+      "type": "good",
+      "points": 20
+    },
+    {
+      "id": "corn",
+      "name": "Corn",
+      "image": "/videos/dauda/games/catch-seeds/corn.png",
+      "type": "good",
+      "points": 15
+    },
+    {
+      "id": "hamster-treat",
+      "name": "Hamster Treat",
+      "image": "/videos/dauda/games/catch-seeds/hamster-treat.png",
+      "type": "good",
+      "points": 25
+    },
+    {
+      "id": "broccoli",
+      "name": "Broccoli",
+      "image": "/videos/dauda/games/catch-seeds/broccoli.png",
+      "type": "bad",
+      "points": -10
+    },
+    {
+      "id": "lemon",
+      "name": "Lemon",
+      "image": "/videos/dauda/games/catch-seeds/lemon.png",
+      "type": "bad",
+      "points": -10
+    },
+    {
+      "id": "cucumber",
+      "name": "Cucumber",
+      "image": "/videos/dauda/games/catch-seeds/cucumber.png",
+      "type": "bad",
+      "points": -10
+    },
+    {
+      "id": "cheese",
+      "name": "Cheese",
+      "image": "/videos/dauda/games/catch-seeds/cheese.png",
+      "type": "bad",
+      "points": -15
+    },
+    {
+      "id": "plastic-bag",
+      "name": "Plastic Bag",
+      "image": "/videos/dauda/games/catch-seeds/plastic-bag.png",
+      "type": "bad",
+      "points": -25
+    }
+  ]
+}

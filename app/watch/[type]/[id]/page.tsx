@@ -1,5 +1,3 @@
-import { HeroBanner } from "../../../../components/HeroBanner";
-
 interface WatchPageProps {
   params: {
     type: string;
@@ -10,10 +8,6 @@ interface WatchPageProps {
 export default function WatchPage({ params }: WatchPageProps) {
   return (
     <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-5xl flex-col gap-8 px-5 py-10 md:px-8">
-      <HeroBanner
-        title="Watch Later"
-        description={`Watching ${params.type} item ${params.id}. This placeholder screen will become your memory player.`}
-      />
       <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-slate-300 shadow-glow">
         <p className="text-lg text-white">Ready to watch:</p>
         <p className="mt-3 text-2xl font-semibold text-white">{params.id}</p>

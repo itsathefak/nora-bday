@@ -1,0 +1,37 @@
+[
+  {
+    "id": "nose",
+    "image": "/videos/piggy/games/zoom/nose.jpg",
+    "answer": "Nose"
+  },
+  {
+    "id": "eyes",
+    "image": "/videos/piggy/games/zoom/eyes.jpg",
+    "answer": "Eyes"
+  },
+  {
+    "id": "butt",
+    "image": "/videos/piggy/games/zoom/butt.jpg",
+    "answer": "Butt"
+  },
+  {
+    "id": "paw",
+    "image": "/videos/piggy/games/zoom/paw.jpg",
+    "answer": "Paw"
+  },
+  {
+    "id": "ears",
+    "image": "/videos/piggy/games/zoom/ears.jpg",
+    "answer": "Ears"
+  },
+  {
+    "id": "mouth",
+    "image": "/videos/piggy/games/zoom/mouth.jpg",
+    "answer": "Mouth"
+  },
+  {
+    "id": "mustache",
+    "image": "/videos/piggy/games/zoom/mustache.jpg",
+    "answer": "Mustache"
+  }
+]

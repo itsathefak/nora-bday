@@ -1,6 +1,5 @@
 import { HeroBanner } from "../../../components/HeroBanner";
 import { ContentRow } from "../../../components/ContentRow";
-import { MediaCard } from "../../../components/MediaCard";
 import { profiles } from "../../../lib/profiles";
 import { getProfileData } from "../../../lib/profileData";
 import type { ProfileId } from "../../../lib/profiles";
@@ -37,24 +36,28 @@ export default function ProfilePage({ params }: ProfilePageProps) {
   return (
     <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl flex-col gap-10 px-5 py-10 md:px-8">
       <HeroBanner
-        title={profileData.hero.title}
-        description={profileData.hero.description}
+        data={{
+          label: "NORAFLIX",
+          title: profileData.hero.title,
+          matchText: profileMeta.subtitle,
+          description: profileData.hero.description,
+          buttons: [],
+          backdropImage: profileMeta.image,
+        }}
       />
 
       <div className="grid gap-8">
         {profileData.sections.map((section) => (
           <section key={section.title} className="space-y-4">
-            <ContentRow title={section.title}>
-              {section.items.map((item) => (
-                <MediaCard
-                  key={item.id}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  image={item.poster}
-                  href={`/watch/${profileId}/${item.id}`}
-                />
-              ))}
-            </ContentRow>
+            <ContentRow
+              title={section.title}
+              items={section.items.map((item) => ({
+                id: item.id,
+                title: item.title,
+                subtitle: item.subtitle,
+                thumbnail: item.poster,
+              }))}
+            />
           </section>
         ))}
       </div>

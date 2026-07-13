@@ -1,8 +1,114 @@
 [
   {
-    "id": "piggy-game-1",
-    "title": "Feather Chase",
-    "subtitle": "Playful adventures",
-    "poster": "/images/piggy/game-1.svg"
+    "id": "piggy-game-where-and-when-was-piggy",
+    "slug": "where-and-when-was-piggy",
+    "title": "Where & When Was Piggy?",
+    "description": "Look at a Piggy photo and guess both where it was taken and when the memory happened.",
+    "futureGameplay": "Show one photo, multiple-choice locations, and multiple-choice dates. Reveal the correct answer and a short fun fact.",
+    "thumbnail": "/videos/piggy/when-where.png"
+  },
+  {
+    "id": "piggy-game-guess-the-pork",
+    "slug": "guess-the-pork",
+    "title": "Guess the Pork",
+    "description": "Drag each answer label onto the correct zoomed-in Piggy image.",
+    "futureGameplay": "Match zoomed-in Piggy photos with labels such as Nose, Eyes, Butt, Paw, Ears, Mouth, and Mustache.",
+    "thumbnail": "/videos/piggy/games/zoom/zoom-pork.png"
+  },
+  {
+    "id": "piggy-game-porkys-fashion-police",
+    "slug": "porkys-fashion-police",
+    "title": "Porky’s Fashion Police",
+    "description": "Look at Porky’s outfits, choose the best matching funny title, and prove you understand elite cat fashion.",
+    "futureGameplay": "Play 12 rounds of Porky outfit photos and choose the best matching fashion title.",
+    "thumbnail": "/videos/piggy/games/outfit/outfit-piggy.png"
+  },
+  {
+    "id": "piggy-game-piggy-memory-match",
+    "slug": "piggy-memory-match",
+    "title": "Piggy Memory Match",
+    "description": "Flip the cards, find all the matching Piggy pairs, and prove your memory is sharper than Porky’s snack radar.",
+    "futureGameplay": "Match 10 duplicated Piggy photos into pairs while tracking moves, time, and best score.",
+    "thumbnail": "/videos/piggy/games/match/match.png"
+  },
+  {
+    "id": "piggy-game-feed-porky",
+    "slug": "feed-porky",
+    "title": "Feed Porky",
+    "description": "Drag food to Porky and discover whether he loves it, tolerates it, or files an official complaint.",
+    "futureGameplay": "Feed Porky 10 foods, trigger happy or angry reactions, and sort the loved foods from the rejected ones.",
+    "thumbnail": "/videos/piggy/games/feed-pig/feed-pig.png"
+  },
+  {
+    "id": "piggy-game-who-scared-piggy",
+    "slug": "who-scared-piggy",
+    "title": "Who Scared Piggy?",
+    "description": "Guess which people, pets, places, and suspicious objects make Porky panic — and which ones he can tolerate.",
+    "futureGameplay": "Answer 12 fear-or-fine rounds and learn what makes Porky run, judge, or relax.",
+    "thumbnail": "/videos/piggy/games/scared/scared-piggy.png"
+  },
+  {
+    "id": "piggy-game-bedtime-piggy",
+    "slug": "bedtime-piggy",
+    "title": "Bedtime Piggy",
+    "description": "Complete Porky’s highly demanding bedtime routine and help the household food beggar finally fall asleep.",
+    "futureGameplay": "Dim the lights, prepare the bed, choose the blanket, pick the snack, give goodnight pets, and watch Porky fall asleep.",
+    "thumbnail": "/videos/piggy/games/bedtime/bedtime-piggy.png"
+  },
+  {
+    "id": "piggy-game-find-piggy",
+    "slug": "find-piggy",
+    "title": "Find Piggy",
+    "description": "There are multiple Piggies hidden in one scene. Click every Piggy you can find before time runs out.",
+    "futureGameplay": "Find all 8 hidden Piggies in one scene using manually configured target areas.",
+    "thumbnail": "/videos/piggy/games/find-piggy/find-piggy.png"
+  },
+  {
+    "id": "piggy-game-piggy-puzzler",
+    "slug": "piggy-puzzler",
+    "title": "Piggy Puzzler",
+    "description": "Put Porky back together one piece at a time and prove you understand the true shape of maximum fluff.",
+    "futureGameplay": "Choose a Piggy photo and rebuild it from shuffled jigsaw-style pieces across easy, medium, and hard grids.",
+    "thumbnail": "/videos/piggy/games/puzzler/piggy-puzzler.png"
+  },
+  {
+    "id": "piggy-game-catch-the-treat",
+    "slug": "catch-the-treat",
+    "title": "Catch the Treat",
+    "description": "Help Porky catch his favourite foods while avoiding the terrible things someone keeps throwing at him.",
+    "futureGameplay": "Move Porky left and right to catch good foods, avoid bad foods, build combos, and protect all three lives.",
+    "thumbnail": "/videos/piggy/games/catch-treat/catch-the-treat.png"
+  },
+  {
+    "id": "piggy-game-piggy-whack-a-paw",
+    "slug": "piggy-whack-a-paw",
+    "title": "Piggy Whack-a-Paw",
+    "description": "Tap Porky’s paws when they pop up, avoid the suspicious objects, and survive the fastest household paw attack.",
+    "futureGameplay": "Whack good paw targets, avoid hazards, build combos, protect lives, and chase a high score.",
+    "thumbnail": "/videos/piggy/games/whack-a-paw/whack-a-paw.png"
+  },
+  {
+    "id": "piggy-game-piggy-treat-sort",
+    "slug": "piggy-treat-sort",
+    "title": "Piggy Treat Sort",
+    "description": "Sort Porky’s favourite snacks from the suspicious foods before he files a complaint with management.",
+    "futureGameplay": "Drag or click food items into Piggy Approved and Piggy Says No bowls, use hints, and protect Porky’s menu score.",
+    "thumbnail": "/videos/piggy/games/treat-sort/treat-sort.png"
+  },
+  {
+    "id": "piggy-game-piggy-photo-quiz",
+    "slug": "piggy-photo-quiz",
+    "title": "Piggy Photo Quiz",
+    "description": "Answer fun questions about Piggy using his real photos and memories.",
+    "futureGameplay": "Ask easy multiple-choice questions about his outfits, favourite foods, hiding spots, habits, and funny moments.",
+    "thumbnail": "/images/piggy/game-1.svg"
+  },
+  {
+    "id": "piggy-game-piggy-mood-match",
+    "slug": "piggy-mood-match",
+    "title": "Piggy Mood Match",
+    "description": "Look at Piggy’s expression and guess his mood.",
+    "futureGameplay": "Use real photos and answers such as hungry, sleepy, scared, angry, curious, or judging everyone.",
+    "thumbnail": "/images/piggy/game-1.svg"
   }
 ]

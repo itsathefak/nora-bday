@@ -1,0 +1,86 @@
+[
+  {
+    "id": "garbage-cover",
+    "name": "Garbage Cover",
+    "image": "/videos/piggy/games/scared/1.png",
+    "scaresPiggy": true,
+    "reaction": "The garbage cover moved. Porky has evacuated the area."
+  },
+  {
+    "id": "his-own-reflection",
+    "name": "His Own Reflection",
+    "image": "/videos/piggy/games/scared/12.png",
+    "scaresPiggy": false,
+    "reaction": "An extremely handsome cat. No danger detected."
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "image": "/videos/piggy/games/scared/2.png",
+    "scaresPiggy": true,
+    "reaction": "Suspicious green object detected. Immediate retreat."
+  },
+  {
+    "id": "mc",
+    "name": "MC",
+    "image": "/videos/piggy/games/scared/10.png",
+    "scaresPiggy": false,
+    "reaction": "MC is just a building. Porky has bigger concerns."
+  },
+  {
+    "id": "tuantuan",
+    "name": "Tuantuan",
+    "image": "/videos/piggy/games/scared/3.png",
+    "scaresPiggy": true,
+    "reaction": "Another cat? Absolutely not. This property is occupied."
+  },
+  {
+    "id": "nora",
+    "name": "Nora",
+    "image": "/videos/piggy/games/scared/4.png",
+    "scaresPiggy": true,
+    "reaction": "Nora approached with suspicious intentions and possibly a costume."
+  },
+  {
+    "id": "atna",
+    "name": "Atna",
+    "image": "/videos/piggy/games/scared/7.png",
+    "scaresPiggy": false,
+    "reaction": "Atna is acceptable, especially when carrying treats."
+  },
+  {
+    "id": "dot-friend",
+    "name": "Dot Friend",
+    "image": "/videos/piggy/games/scared/5.png",
+    "scaresPiggy": true,
+    "reaction": "Piggy remembers that Dot Friend knows Melody. Trust level reduced."
+  },
+  {
+    "id": "alfie",
+    "name": "Alfie",
+    "image": "/videos/piggy/games/scared/8.png",
+    "scaresPiggy": false,
+    "reaction": "Rabbit detected. Not a threat. Possibly soft."
+  },
+  {
+    "id": "randy",
+    "name": "Randy",
+    "image": "/videos/piggy/games/scared/6.png",
+    "scaresPiggy": true,
+    "reaction": "Building cleaner spotted. Porky suspects vacuum-related activity."
+  },
+  {
+    "id": "unit-801",
+    "name": "Unit 801",
+    "image": "/videos/piggy/games/scared/9.png",
+    "scaresPiggy": false,
+    "reaction": "Home territory. Porky owns this unit emotionally."
+  },
+  {
+    "id": "duck-neck-bag",
+    "name": "Duck Neck Bag",
+    "image": "/videos/piggy/games/scared/11.png",
+    "scaresPiggy": false,
+    "reaction": "Definitely not scary. In fact, Porky would like it opened immediately."
+  }
+]

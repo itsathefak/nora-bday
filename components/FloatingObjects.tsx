@@ -11,28 +11,28 @@ interface FloatingObject {
   size: number;
 }
 
-// only paw emoji for consistency
-const EMOJIS = ["🐾"];
+const DEFAULT_OBJECTS = ["🐾"];
 
-export function FloatingObjects() {
-  const [objects, setObjects] = useState<FloatingObject[]>([]);
+export function FloatingObjects({ objects }: { objects?: string[] }) {
+  const [floatingObjects, setFloatingObjects] = useState<FloatingObject[]>([]);
 
   useEffect(() => {
-    setObjects(
+    const availableObjects = objects?.length ? objects : DEFAULT_OBJECTS;
+
+    setFloatingObjects(
       Array.from({ length: 4 }, (_, i) => ({
         id: i,
         left: Math.random() * 78 + 8,
         delay: Math.random() * 8,
-        // larger paw objects
-        emoji: EMOJIS[0],
-        size: 28 + Math.random() * 44,
+        emoji: availableObjects[i % availableObjects.length],
+        size: 24 + Math.random() * 42,
       })),
     );
-  }, []);
+  }, [objects]);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {objects.map((obj) => (
+      {floatingObjects.map((obj) => (
         <motion.div
           key={obj.id}
           style={{

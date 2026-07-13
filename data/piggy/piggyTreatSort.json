@@ -1,0 +1,72 @@
+[
+  {
+    "id": "kibbles",
+    "name": "Kibbles",
+    "image": "/videos/piggy/games/treat-sort/1.png",
+    "category": "approved",
+    "reaction": "A dependable Porky classic."
+  },
+  {
+    "id": "duck-neck",
+    "name": "Duck Neck",
+    "image": "/videos/piggy/games/treat-sort/2.png",
+    "category": "approved",
+    "reaction": "Premium cuisine. Immediate approval."
+  },
+  {
+    "id": "freeze-dried-treats",
+    "name": "Freeze-Dried Treats",
+    "image": "/videos/piggy/games/treat-sort/3.webp",
+    "category": "approved",
+    "reaction": "The gold standard of snack engineering."
+  },
+  {
+    "id": "signature-cat-food",
+    "name": "Signature Cat Food",
+    "image": "/videos/piggy/games/treat-sort/4.png",
+    "category": "approved",
+    "reaction": "Respectable and properly cat-focused."
+  },
+  {
+    "id": "fancy-feast",
+    "name": "Fancy Feast",
+    "image": "/videos/piggy/games/treat-sort/5.png",
+    "category": "approved",
+    "reaction": "Finally, some dignity."
+  },
+  {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "image": "/videos/piggy/games/treat-sort/6.png",
+    "category": "rejected",
+    "reaction": "Green tree rejected."
+  },
+  {
+    "id": "dauda",
+    "name": "Dauda",
+    "image": "/videos/piggy/games/treat-sort/7.png",
+    "category": "rejected",
+    "reaction": "Dauda is a coworker, not dinner."
+  },
+  {
+    "id": "lemon",
+    "name": "Lemon",
+    "image": "/videos/piggy/games/treat-sort/8.png",
+    "category": "rejected",
+    "reaction": "Too sour. Emotional damage sustained."
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "image": "/videos/piggy/games/treat-sort/9.png",
+    "category": "rejected",
+    "reaction": "Suspicious green object denied entry."
+  },
+  {
+    "id": "dry-toast",
+    "name": "Dry Toast",
+    "image": "/videos/piggy/games/treat-sort/10.png",
+    "category": "rejected",
+    "reaction": "Porky expected more from this kitchen."
+  }
+]

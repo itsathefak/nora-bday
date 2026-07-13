@@ -1,0 +1,29 @@
+[
+  {
+    "id": "piggy-game-1",
+    "title": "Feather Chase",
+    "subtitle": "Playful adventures",
+    "thumbnail": "/images/piggy/game-1.svg"
+  },
+  {
+    "id": "piggy-video-1",
+    "title": "Piggy Purrfest",
+    "subtitle": "A fluffy memory",
+    "thumbnail": "/images/piggy/video-1.svg",
+    "backdropImage": "/videos/piggy/piggy.jpg",
+    "backdropVideo": "/videos/piggy/piggy.mp4",
+    "video": "/videos/piggy/piggy.mp4"
+  },
+  {
+    "id": "piggy-quote-1",
+    "title": "Best Nap Ever",
+    "subtitle": "Piggy says: ‘Caught the softest sunbeam today.’",
+    "thumbnail": "/images/piggy/quote-1.svg"
+  },
+  {
+    "id": "piggy-achievement-1",
+    "title": "Sunbeam King",
+    "subtitle": "Record nap time",
+    "thumbnail": "/images/piggy/achievement-1.svg"
+  }
+]

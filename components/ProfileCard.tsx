@@ -26,7 +26,7 @@ export function ProfileCard({
       style={{ borderColor: "rgba(255,255,255,0.12)" }}
     >
       <Link
-        href={href}
+        href={href as any}
         className="block rounded-3xl p-4 transition duration-300 hover:bg-white/5"
       >
         <div className="flex items-center gap-4">

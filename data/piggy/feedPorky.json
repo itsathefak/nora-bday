@@ -1,0 +1,72 @@
+[
+  {
+    "id": "kibbles",
+    "name": "Kibbles",
+    "image": "/videos/piggy/games/feed-pig/1.png",
+    "liked": true,
+    "reaction": "Acceptable. Not exciting, but acceptable."
+  },
+  {
+    "id": "lemon",
+    "name": "Lemon",
+    "image": "/videos/piggy/games/feed-pig/8.png",
+    "liked": false,
+    "reaction": "Why is the food attacking back?"
+  },
+  {
+    "id": "duck-neck",
+    "name": "Duck Neck",
+    "image": "/videos/piggy/games/feed-pig/2.png",
+    "liked": true,
+    "reaction": "Finally. A meal worthy of Porky."
+  },
+  {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "image": "/videos/piggy/games/feed-pig/6.png",
+    "liked": false,
+    "reaction": "Piggy has reported this meal to management."
+  },
+  {
+    "id": "freeze-dried-treats",
+    "name": "Freeze-Dried Treats",
+    "image": "/videos/piggy/games/feed-pig/3.webp",
+    "liked": true,
+    "reaction": "Immediate approval. No further questions."
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "image": "/videos/piggy/games/feed-pig/9.png",
+    "liked": false,
+    "reaction": "Suspicious green object rejected."
+  },
+  {
+    "id": "chicken",
+    "name": "Chicken",
+    "image": "/videos/piggy/games/feed-pig/4.png",
+    "liked": true,
+    "reaction": "Porky approves this offering."
+  },
+  {
+    "id": "dry-toast",
+    "name": "Dry Toast",
+    "image": "/videos/piggy/games/feed-pig/10.png",
+    "liked": false,
+    "reaction": "Porky expected better from this establishment."
+  },
+  {
+    "id": "salmon",
+    "name": "Salmon",
+    "image": "/videos/piggy/games/feed-pig/5.png",
+    "liked": true,
+    "reaction": "Excellent choice, human."
+  },
+  {
+    "id": "dauda",
+    "name": "Dauda",
+    "image": "/videos/piggy/games/feed-pig/7.png",
+    "liked": false,
+    "reaction": "Absolutely not. Dauda is for chasing, not dinner."
+  }
+]

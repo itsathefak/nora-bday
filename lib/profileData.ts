@@ -15,8 +15,12 @@ import type { ProfileId } from "./profiles";
 export interface SectionItem {
   id: string;
   title: string;
-  subtitle: string;
-  poster: string;
+  subtitle?: string;
+  poster?: string;
+  slug?: string;
+  description?: string;
+  futureGameplay?: string;
+  thumbnail?: string;
 }
 
 export interface ProfilePageData {

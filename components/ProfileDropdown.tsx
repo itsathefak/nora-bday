@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const profiles = [
   { id: "nora", name: "Nora", img: "/videos/nora/nora.png" },
@@ -15,7 +15,11 @@ const profiles = [
 export function ProfileDropdown() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
   const closeTimeout = useRef<number | null>(null);
+  const activeProfile =
+    profiles.find((profile) => pathname?.includes(`/profile/${profile.id}`)) ||
+    profiles[0];
 
   const openMenu = () => {
     if (closeTimeout.current) {
@@ -40,14 +44,14 @@ export function ProfileDropdown() {
       <div className="flex items-center gap-3 cursor-pointer select-none">
         <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white/10">
           <Image
-            src={profiles[0].img}
-            alt="avatar"
+            src={activeProfile.img}
+            alt={`${activeProfile.name} avatar`}
             width={40}
             height={40}
             className="object-cover"
           />
         </div>
-        <div className="text-sm text-white">Nora</div>
+        <div className="text-sm text-white">{activeProfile.name}</div>
       </div>
 
       <motion.div

@@ -1,0 +1,56 @@
+{
+  "duration": 45,
+  "startingLives": 3,
+  "spawnInterval": 850,
+  "targets": [
+    {
+      "id": "paw",
+      "name": "Piggy Paw",
+      "image": "/videos/piggy/games/whack-a-paw/paw.png",
+      "type": "good",
+      "points": 10
+    },
+    {
+      "id": "piggy-face",
+      "name": "Piggy Face",
+      "image": "/videos/piggy/games/whack-a-paw/piggy-face.png",
+      "type": "bonus",
+      "points": 25
+    },
+    {
+      "id": "golden-paw",
+      "name": "Golden Paw",
+      "image": "/videos/piggy/games/whack-a-paw/golden-paw.png",
+      "type": "bonus",
+      "points": 50
+    },
+    {
+      "id": "plastic-bag",
+      "name": "Plastic Bag",
+      "image": "/videos/piggy/games/whack-a-paw/plastic-bag.png",
+      "type": "bad",
+      "points": -15
+    },
+    {
+      "id": "vacuum",
+      "name": "Vacuum Cleaner",
+      "image": "/videos/piggy/games/whack-a-paw/vacuum.png",
+      "type": "bad",
+      "points": -20
+    },
+    {
+      "id": "cucumber",
+      "name": "Cucumber",
+      "image": "/videos/piggy/games/whack-a-paw/cucumber.png",
+      "type": "bad",
+      "points": -10
+    },
+    {
+      "id": "dauda",
+      "name": "Dauda",
+      "image": "/videos/piggy/games/whack-a-paw/dauda.png",
+      "type": "bad",
+      "points": -25
+    }
+  ]
+}

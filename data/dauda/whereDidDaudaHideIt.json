@@ -1,0 +1,78 @@
+{
+  "rounds": 8,
+  "spots": [
+    {
+      "id": "house",
+      "name": "Tiny House",
+      "image": "/videos/dauda/games/hide-it/house.png"
+    },
+    {
+      "id": "tunnel",
+      "name": "Blue Tunnel",
+      "image": "/videos/dauda/games/hide-it/tunnel.png"
+    },
+    {
+      "id": "food-bowl",
+      "name": "Food Bowl",
+      "image": "/videos/dauda/games/hide-it/food-bowl.png"
+    },
+    {
+      "id": "bedding",
+      "name": "Bedding Pile",
+      "image": "/videos/dauda/games/hide-it/bedding.png"
+    }
+  ],
+  "snacks": [
+    {
+      "id": "sunflower-seed",
+      "name": "Sunflower Seed",
+      "image": "/videos/dauda/games/hide-it/sunflower-seed.png"
+    },
+    {
+      "id": "pumpkin-seed",
+      "name": "Pumpkin Seed",
+      "image": "/videos/dauda/games/hide-it/pumpkin-seed.png"
+    },
+    {
+      "id": "peanut",
+      "name": "Peanut",
+      "image": "/videos/dauda/games/hide-it/peanut.png"
+    },
+    {
+      "id": "corn",
+      "name": "Corn",
+      "image": "/videos/dauda/games/hide-it/corn.png"
+    },
+    {
+      "id": "hamster-treat",
+      "name": "Hamster Treat",
+      "image": "/videos/dauda/games/hide-it/hamster-treat.png"
+    }
+  ],
+  "difficulty": {
+    "cozy": {
+      "label": "Cozy Memory",
+      "previewSeconds": 3,
+      "guessSeconds": 0,
+      "lingeringHint": true,
+      "shuffleAfterPreview": false,
+      "multiplier": 1
+    },
+    "normal": {
+      "label": "Normal",
+      "previewSeconds": 2,
+      "guessSeconds": 8,
+      "lingeringHint": false,
+      "shuffleAfterPreview": false,
+      "multiplier": 1.5
+    },
+    "chaos": {
+      "label": "Tiny Brain Chaos",
+      "previewSeconds": 1,
+      "guessSeconds": 5,
+      "lingeringHint": false,
+      "shuffleAfterPreview": true,
+      "multiplier": 2
+    }
+  }
+}

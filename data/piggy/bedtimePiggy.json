@@ -1,0 +1,14 @@
+{
+  "thumbnail": "/videos/piggy/games/bedtime/bedtime-piggy.png",
+  "photos": {
+    "platformNap": "/videos/piggy/games/bedtime/1.png",
+    "bedNap": "/videos/piggy/games/bedtime/2.png",
+    "humanNap": "/videos/piggy/games/bedtime/3.png",
+    "yawning": "/videos/piggy/games/bedtime/4.png"
+  },
+  "audio": {
+    "purr": "/sounds/piggy/purr.mp3",
+    "yawn": "/sounds/piggy/yawn.mp3",
+    "sleep": "/sounds/piggy/sleep.mp3"
+  }
+}

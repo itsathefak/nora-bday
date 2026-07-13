@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "label": "PIGGY STUDIOS ORIGINAL",
+    "title": "Piggy: The Fluffy Boss",
+    "matchText": "🍗 #1 Food Beggar in the House",
+    "description": "Meet Piggy—also known as Porky. Professional food beggar, certified snack inspector, and full-time king of the house. His daily routine includes begging for freeze-dried treats, searching for duck necks, taking 14 naps, randomly attacking poor Dauda, and sprinting away the moment he spots a suspicious plastic bag. If there's food nearby, Piggy somehow already knows.",
+    "details": [
+      { "label": "Genre", "value": "Comedy • Fluff • Games • Chaos" },
+      { "label": "Occupation", "value": "Professional Food Beggar" },
+      { "label": "Favourite Foods", "value": "Freeze-Dried Treats • Duck Neck • Chicken" },
+      { "label": "Weaknesses", "value": "Plastic Bags • Vacuum Cleaner • Other Cats" },
+      { "label": "Status", "value": "Currently Looking for Snacks" }
+    ],
+    "buttons": [
+      { "type": "play", "label": "🎮 Play Games", "icon": "" }
+    ],
+    "footerText": "Made exclusively for Piggy • Powered by Treats & Chaos 🐾",
+    "backdropImage": "/videos/piggy/piggy.jpg",
+    "backdropVideo": "/videos/piggy/piggy.mp4"
+  },
+  "rows": []
+}

@@ -11,6 +11,9 @@ export function MediaCard({
   onOpen?: (item: any, opts?: any) => void;
 }) {
   const [imgError, setImgError] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const videoThumbnail = item?.video || item?.backdropVideo || item?.trailer;
+  const hasVideoThumbnail = !!videoThumbnail && !videoError;
   const hasImage = !!item?.thumbnail && !imgError;
 
   return (
@@ -22,7 +25,17 @@ export function MediaCard({
       }}
     >
       <div className="relative w-full h-40 md:h-48 lg:h-56 bg-slate-900">
-        {hasImage ? (
+        {hasVideoThumbnail ? (
+          <video
+            src={videoThumbnail}
+            muted
+            playsInline
+            preload="metadata"
+            poster={item?.thumbnail || item?.backdropImage}
+            className="h-full w-full object-cover"
+            onError={() => setVideoError(true)}
+          />
+        ) : hasImage ? (
           <img
             src={item.thumbnail}
             alt={item?.title || "Media thumbnail"}

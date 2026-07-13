@@ -1,0 +1,72 @@
+[
+  {
+    "id": "kibbles",
+    "name": "Kibbles",
+    "image": "/videos/piggy/games/catch-treat/1.png",
+    "isGood": true,
+    "points": 10
+  },
+  {
+    "id": "duck-neck",
+    "name": "Duck Neck",
+    "image": "/videos/piggy/games/catch-treat/2.png",
+    "isGood": true,
+    "points": 25
+  },
+  {
+    "id": "freeze-dried-treats",
+    "name": "Freeze-Dried Treats",
+    "image": "/videos/piggy/games/catch-treat/3.webp",
+    "isGood": true,
+    "points": 20
+  },
+  {
+    "id": "signature-cat-food",
+    "name": "Signature Cat Food",
+    "image": "/videos/piggy/games/catch-treat/4.png",
+    "isGood": true,
+    "points": 15
+  },
+  {
+    "id": "fancy-feast",
+    "name": "Fancy Feast",
+    "image": "/videos/piggy/games/catch-treat/5.png",
+    "isGood": true,
+    "points": 15
+  },
+  {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "image": "/videos/piggy/games/catch-treat/6.png",
+    "isGood": false,
+    "penalty": -10
+  },
+  {
+    "id": "dauda",
+    "name": "Dauda",
+    "image": "/videos/piggy/games/catch-treat/7.png",
+    "isGood": false,
+    "penalty": -20
+  },
+  {
+    "id": "lemon",
+    "name": "Lemon",
+    "image": "/videos/piggy/games/catch-treat/8.png",
+    "isGood": false,
+    "penalty": -10
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "image": "/videos/piggy/games/catch-treat/9.png",
+    "isGood": false,
+    "penalty": -10
+  },
+  {
+    "id": "dry-toast",
+    "name": "Dry Toast",
+    "image": "/videos/piggy/games/catch-treat/10.png",
+    "isGood": false,
+    "penalty": -5
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "difficulties": {
+    "easy": {
+      "label": "Easy",
+      "rows": 9,
+      "columns": 9,
+      "timeLimit": 75,
+      "baseScore": 500,
+      "optimalMoves": 22,
+      "start": { "row": 1, "column": 1 },
+      "exit": { "row": 7, "column": 7 },
+      "seeds": [
+        { "id": "easy-seed-1", "row": 1, "column": 5 },
+        { "id": "easy-seed-2", "row": 3, "column": 3 },
+        { "id": "easy-seed-3", "row": 5, "column": 5 }
+      ],
+      "maze": [
+        "#########",
+        "#S....#.#",
+        "#.###.#.#",
+        "#...#...#",
+        "###.#.###",
+        "#...#...#",
+        "#.#####.#",
+        "#.....#E#",
+        "#########"
+      ]
+    },
+    "normal": {
+      "label": "Normal",
+      "rows": 13,
+      "columns": 13,
+      "timeLimit": 105,
+      "baseScore": 1000,
+      "optimalMoves": 44,
+      "start": { "row": 1, "column": 1 },
+      "exit": { "row": 11, "column": 11 },
+      "seeds": [
+        { "id": "normal-seed-1", "row": 1, "column": 7 },
+        { "id": "normal-seed-2", "row": 3, "column": 3 },
+        { "id": "normal-seed-3", "row": 7, "column": 7 },
+        { "id": "normal-seed-4", "row": 9, "column": 3 },
+        { "id": "normal-seed-5", "row": 11, "column": 9 }
+      ],
+      "maze": [
+        "#############",
+        "#S....#.....#",
+        "#.###.#.###.#",
+        "#...#...#...#",
+        "###.#####.#.#",
+        "#...#.....#.#",
+        "#.###.#####.#",
+        "#.....#.....#",
+        "#.#####.###.#",
+        "#...#...#...#",
+        "###.#.###.###",
+        "#.....#....E#",
+        "#############"
+      ]
+    },
+    "chaos": {
+      "label": "Tiny Chaos",
+      "rows": 17,
+      "columns": 17,
+      "timeLimit": 135,
+      "baseScore": 1500,
+      "optimalMoves": 70,
+      "start": { "row": 1, "column": 1 },
+      "exit": { "row": 15, "column": 15 },
+      "seeds": [
+        { "id": "chaos-seed-1", "row": 1, "column": 9 },
+        { "id": "chaos-seed-2", "row": 3, "column": 5 },
+        { "id": "chaos-seed-3", "row": 5, "column": 13 },
+        { "id": "chaos-seed-4", "row": 9, "column": 7 },
+        { "id": "chaos-seed-5", "row": 11, "column": 3 },
+        { "id": "chaos-seed-6", "row": 13, "column": 11 },
+        { "id": "chaos-seed-7", "row": 15, "column": 5 }
+      ],
+      "maze": [
+        "#################",
+        "#S....#.........#",
+        "#.###.#.#######.#",
+        "#...#...#.....#.#",
+        "###.#####.###.#.#",
+        "#...#.....#...#.#",
+        "#.###.#####.###.#",
+        "#.....#...#.....#",
+        "#####.#.#.#####.#",
+        "#.....#.#.....#.#",
+        "#.#####.#####.#.#",
+        "#...#.....#...#.#",
+        "###.#.###.#.###.#",
+        "#...#...#.#.....#",
+        "#.#####.#.#####.#",
+        "#.......#.....#E#",
+        "#################"
+      ]
+    }
+  }
+}

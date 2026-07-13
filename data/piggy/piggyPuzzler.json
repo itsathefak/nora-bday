@@ -1,0 +1,26 @@
+[
+  {
+    "id": "piggy-puzzle-1",
+    "title": "Puzzle Porky I",
+    "image": "/videos/piggy/games/puzzler/1.jpg",
+    "alt": "Piggy puzzle photo 1"
+  },
+  {
+    "id": "piggy-puzzle-2",
+    "title": "Puzzle Porky II",
+    "image": "/videos/piggy/games/puzzler/2.jpg",
+    "alt": "Piggy puzzle photo 2"
+  },
+  {
+    "id": "piggy-puzzle-3",
+    "title": "Puzzle Porky III",
+    "image": "/videos/piggy/games/puzzler/3.jpg",
+    "alt": "Piggy puzzle photo 3"
+  },
+  {
+    "id": "piggy-puzzle-4",
+    "title": "Puzzle Porky IV",
+    "image": "/videos/piggy/games/puzzler/4.jpg",
+    "alt": "Piggy puzzle photo 4"
+  }
+]
