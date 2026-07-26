@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dauda",
+    "name": "Dauda",
+    "image": "/videos/dauda/games/memory-match/1.jpg",
+    "alt": "Dauda the hamster"
+  },
+  {
+    "id": "sunflower-seed",
+    "name": "Sunflower Seed",
+    "image": "/videos/dauda/games/memory-match/2.jpg",
+    "alt": "Sunflower seed"
+  },
+  {
+    "id": "hamster-wheel",
+    "name": "Hamster Wheel",
+    "image": "/videos/dauda/games/memory-match/3.jpg",
+    "alt": "Hamster wheel"
+  },
+  {
+    "id": "blue-tunnel",
+    "name": "Blue Tunnel",
+    "image": "/videos/dauda/games/memory-match/4.jpg",
+    "alt": "Blue tunnel"
+  },
+  {
+    "id": "tiny-house",
+    "name": "Tiny House",
+    "image": "/videos/dauda/games/memory-match/5.jpg",
+    "alt": "Tiny hamster house"
+  },
+  {
+    "id": "food-bowl",
+    "name": "Food Bowl",
+    "image": "/videos/dauda/games/memory-match/6.jpg",
+    "alt": "Food bowl"
+  },
+  {
+    "id": "hammock",
+    "name": "Hammock",
+    "image": "/videos/dauda/games/memory-match/7.jpg",
+    "alt": "Hamster hammock"
+  },
+  {
+    "id": "bridge",
+    "name": "Bridge",
+    "image": "/videos/dauda/games/memory-match/8.jpg",
+    "alt": "Tiny bridge"
+  },
+  {
+    "id": "bedding",
+    "name": "Bedding",
+    "image": "/videos/dauda/games/memory-match/9.jpg",
+    "alt": "Cozy bedding"
+  },
+  {
+    "id": "chew-toy",
+    "name": "Chew Toy",
+    "image": "/videos/dauda/games/memory-match/10.jpg",
+    "alt": "Chew toy"
+  }
+]

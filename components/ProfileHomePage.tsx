@@ -9,6 +9,7 @@ import { PawPrints } from "./PawPrints";
 import { FloatingParticles } from "./FloatingParticles";
 import { FloatingObjects } from "./FloatingObjects";
 import MediaModal from "./MediaModal";
+import NoraMonthlyLibrary, { MonthlyMovie } from "./NoraMonthlyLibrary";
 
 interface RowDefinition {
   id: string;
@@ -34,7 +35,17 @@ function normalizeFavoriteItem(item: any) {
   };
 }
 
-export function ProfileHomePage({ heroData, rows, mediaMap }: { heroData: any; rows: RowDefinition[]; mediaMap: Record<string, any> }) {
+export function ProfileHomePage({
+  heroData,
+  rows,
+  mediaMap,
+  noraMonthlyMovies,
+}: {
+  heroData: any;
+  rows: RowDefinition[];
+  mediaMap: Record<string, any>;
+  noraMonthlyMovies?: MonthlyMovie[];
+}) {
   const [selectedMedia, setSelectedMedia] = React.useState<any | null>(null);
   const [modalAutoplay, setModalAutoplay] = React.useState<boolean>(false);
   const [foreverItems, setForeverItems] = React.useState<any[]>([]);
@@ -136,25 +147,29 @@ export function ProfileHomePage({ heroData, rows, mediaMap }: { heroData: any; r
       <main className="pt-24">
         <HeroBanner data={heroData} onOpen={(it: any, opts?: any) => openModal(it, opts)} />
 
-        <div id="profile-rows" className="max-w-7xl mx-auto px-6 py-12 space-y-10 scroll-mt-24">
-          {foreverDisplayItems.length > 0 && (
-            <ContentRow
-              title="❤️ Our Forever Collection"
-              items={foreverDisplayItems}
-              onOpen={(it: any) => openModal(it)}
-            />
-          )}
+        {noraMonthlyMovies ? (
+          <NoraMonthlyLibrary movies={noraMonthlyMovies} />
+        ) : (
+          <div id="profile-rows" className="max-w-7xl mx-auto px-6 py-12 space-y-10 scroll-mt-24">
+            {foreverDisplayItems.length > 0 && (
+              <ContentRow
+                title="❤️ Our Forever Collection"
+                items={foreverDisplayItems}
+                onOpen={(it: any) => openModal(it)}
+              />
+            )}
 
-          {rows.map((r) => (
-            <ContentRow
-              key={r.id}
-              title={r.title}
-              items={r.items.map((id) => mediaMap[id]).filter(Boolean)}
-              layout={r.type === "carousel" ? "carousel" : undefined}
-              onOpen={(it: any) => openModal(it)}
-            />
-          ))}
-        </div>
+            {rows.map((r) => (
+              <ContentRow
+                key={r.id}
+                title={r.title}
+                items={r.items.map((id) => mediaMap[id]).filter(Boolean)}
+                layout={r.type === "carousel" ? "carousel" : undefined}
+                onOpen={(it: any) => openModal(it)}
+              />
+            ))}
+          </div>
+        )}
       </main>
 
       <MediaModal

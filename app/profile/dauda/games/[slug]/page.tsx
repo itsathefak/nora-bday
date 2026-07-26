@@ -1,9 +1,15 @@
 import Link from "next/link";
+import { BuildDaudasHomeGame } from "../../../../../components/games/BuildDaudasHomeGame";
 import { CatchTheSeedsGame } from "../../../../../components/games/CatchTheSeedsGame";
+import { DaudaMemoryMatchGame } from "../../../../../components/games/DaudaMemoryMatchGame";
+import { FindDaudaGame } from "../../../../../components/games/FindDaudaGame";
 import { HamsterMazeGame } from "../../../../../components/games/HamsterMazeGame";
 import { WheelChampionGame } from "../../../../../components/games/WheelChampionGame";
 import { WhereDidDaudaHideItGame } from "../../../../../components/games/WhereDidDaudaHideItGame";
+import buildDaudasHomeData from "../../../../../data/dauda/buildDaudasHome.json";
 import catchTheSeedsData from "../../../../../data/dauda/catchTheSeeds.json";
+import daudaMemoryMatchData from "../../../../../data/dauda/daudaMemoryMatch.json";
+import findDaudaData from "../../../../../data/dauda/findDauda.json";
 import hamsterMazeData from "../../../../../data/dauda/hamsterMaze.json";
 import whereDidDaudaHideItData from "../../../../../data/dauda/whereDidDaudaHideIt.json";
 import games from "../../../../../data/dauda/games.json";
@@ -31,6 +37,18 @@ export default function DaudaGamePage({ params }: DaudaGamePageProps) {
 
   if (params.slug === "where-did-dauda-hide-it") {
     return <WhereDidDaudaHideItGame data={whereDidDaudaHideItData} />;
+  }
+
+  if (params.slug === "build-daudas-home") {
+    return <BuildDaudasHomeGame data={buildDaudasHomeData} />;
+  }
+
+  if (params.slug === "memory-match") {
+    return <DaudaMemoryMatchGame data={daudaMemoryMatchData} />;
+  }
+
+  if (params.slug === "find-dauda") {
+    return <FindDaudaGame data={findDaudaData} />;
   }
 
   if (!game) {

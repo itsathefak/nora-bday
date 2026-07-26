@@ -1,0 +1,96 @@
+{
+  "image": "/videos/dauda/games/find-dauda/find-dauda-scene.png",
+  "totalTargets": 11,
+  "timeLimit": 75,
+  "maxHints": 3,
+  "targets": [
+    {
+      "id": "dauda-1",
+      "x": 2.7,
+      "y": 7.3,
+      "width": 4.1,
+      "height": 6.2,
+      "hint": "Look inside the tiny window on the left wall."
+    },
+    {
+      "id": "dauda-2",
+      "x": 32.3,
+      "y": 7.5,
+      "width": 5.1,
+      "height": 11.2,
+      "hint": "Check the shelf near the little red-roof house."
+    },
+    {
+      "id": "dauda-3",
+      "x": 48.1,
+      "y": 12.6,
+      "width": 5.3,
+      "height": 8.5,
+      "hint": "Someone is relaxing in the hammock."
+    },
+    {
+      "id": "dauda-4",
+      "x": 76.6,
+      "y": 8.8,
+      "width": 5.2,
+      "height": 9.5,
+      "hint": "Look on the upper-right shelf."
+    },
+    {
+      "id": "dauda-5",
+      "x": 64.9,
+      "y": 37.8,
+      "width": 6.4,
+      "height": 9.2,
+      "hint": "Check the blue tunnel near the right side."
+    },
+    {
+      "id": "dauda-6",
+      "x": 34.1,
+      "y": 79.1,
+      "width": 5.2,
+      "height": 8.4,
+      "hint": "One Dauda is peeking from the wooden house near the bottom."
+    },
+    {
+      "id": "dauda-7",
+      "x": 11.0,
+      "y": 41.2,
+      "width": 5.2,
+      "height": 9.0,
+      "hint": "Check the coconut hideout on the left side."
+    },
+    {
+      "id": "dauda-8",
+      "x": 33.0,
+      "y": 42.0,
+      "width": 5.4,
+      "height": 8.2,
+      "hint": "Look inside the woven tunnel near the middle."
+    },
+    {
+      "id": "dauda-9",
+      "x": 42.0,
+      "y": 44.3,
+      "width": 5.0,
+      "height": 7.4,
+      "hint": "Search the bedding just left of the wooden bridge."
+    },
+    {
+      "id": "dauda-10",
+      "x": 84.0,
+      "y": 52.0,
+      "width": 7.0,
+      "height": 12.0,
+      "hint": "One Dauda is sitting proudly inside the big blue wheel."
+    },
+    {
+      "id": "dauda-11",
+      "x": 90.8,
+      "y": 89.0,
+      "width": 5.4,
+      "height": 8.4,
+      "hint": "Look low on the far right, near the bottom edge."
+    }
+  ]
+}
