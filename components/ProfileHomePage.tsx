@@ -40,11 +40,13 @@ export function ProfileHomePage({
   rows,
   mediaMap,
   noraMonthlyMovies,
+  noraFeaturedMovies,
 }: {
   heroData: any;
   rows: RowDefinition[];
   mediaMap: Record<string, any>;
   noraMonthlyMovies?: MonthlyMovie[];
+  noraFeaturedMovies?: MonthlyMovie[];
 }) {
   const [selectedMedia, setSelectedMedia] = React.useState<any | null>(null);
   const [modalAutoplay, setModalAutoplay] = React.useState<boolean>(false);
@@ -148,7 +150,10 @@ export function ProfileHomePage({
         <HeroBanner data={heroData} onOpen={(it: any, opts?: any) => openModal(it, opts)} />
 
         {noraMonthlyMovies ? (
-          <NoraMonthlyLibrary movies={noraMonthlyMovies} />
+          <NoraMonthlyLibrary
+            movies={noraMonthlyMovies}
+            featuredMovies={noraFeaturedMovies}
+          />
         ) : (
           <div id="profile-rows" className="max-w-7xl mx-auto px-6 py-12 space-y-10 scroll-mt-24">
             {foreverDisplayItems.length > 0 && (

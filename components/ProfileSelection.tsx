@@ -19,25 +19,25 @@ const profiles: ProfileCard[] = [
   {
     id: "nora",
     name: "Nora",
-    title: "The Birthday Star",
+    title: "Queen ILY BB",
     image: "/videos/nora/nora.png",
   },
   {
     id: "piggy",
     name: "Piggy",
-    title: "The Cozy Cat",
+    title: "The Spoilt fatty",
     image: "/videos/piggy/piggy.jpg",
   },
   {
     id: "dauda",
     name: "Dauda",
-    title: "The Speedy Hamster",
+    title: "The leftout one",
     image: "/videos/dauda/daud.png",
   },
   {
     id: "atna",
     name: "Atna",
-    title: "The Creative Soul",
+    title: "Dalit",
     image: "/videos/atna/atna.png",
   },
 ];
@@ -211,18 +211,6 @@ export function ProfileSelection() {
           </motion.div>
         ))}
       </motion.div>
-
-      {/* Manage Profiles button */}
-      <motion.button
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-8 py-3 border-2 border-slate-500 text-slate-300 hover:border-red-500 hover:text-red-400 font-semibold tracking-widest uppercase text-sm transition-colors duration-200"
-      >
-        Manage Profiles
-      </motion.button>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import homeData from "../../../data/nora/home.json";
 import rows from "../../../data/nora/rows.json";
 import media from "../../../data/nora/media.json";
 import monthlyMovies from "../../../data/nora/monthlyMovies.json";
+import featuredMovies from "../../../data/nora/featuredMovies.json";
 
 export default function NoraProfilePage() {
   const hero = homeData.hero;
@@ -17,6 +18,7 @@ export default function NoraProfilePage() {
       rows={rows}
       mediaMap={mediaMap}
       noraMonthlyMovies={monthlyMovies}
+      noraFeaturedMovies={featuredMovies}
     />
   );
 }

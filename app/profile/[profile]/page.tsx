@@ -1,5 +1,6 @@
 import { HeroBanner } from "../../../components/HeroBanner";
 import { ContentRow } from "../../../components/ContentRow";
+import { AtnaProfileGate } from "../../../components/AtnaUnlockGate";
 import { profiles } from "../../../lib/profiles";
 import { getProfileData } from "../../../lib/profileData";
 import type { ProfileId } from "../../../lib/profiles";
@@ -33,7 +34,7 @@ export default function ProfilePage({ params }: ProfilePageProps) {
   const profileData = getProfileData(profileId);
   const profileMeta = profiles.find((profile) => profile.id === profileId)!;
 
-  return (
+  const profilePage = (
     <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl flex-col gap-10 px-5 py-10 md:px-8">
       <HeroBanner
         data={{
@@ -70,4 +71,10 @@ export default function ProfilePage({ params }: ProfilePageProps) {
       </div>
     </div>
   );
+
+  if (profileId === "atna") {
+    return <AtnaProfileGate>{profilePage}</AtnaProfileGate>;
+  }
+
+  return profilePage;
 }

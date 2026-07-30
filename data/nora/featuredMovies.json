@@ -1,0 +1,47 @@
+[
+  {
+    "id": "happy-days",
+    "slug": "happy-days",
+    "title": "Happy Days",
+    "subtitle": "A featured NoraFlix memory",
+    "monthLabel": "Featured",
+    "year": 2026,
+    "video": "/videos/nora/Happy-days.mp4",
+    "thumbnail": "/images/nora/featured/happy-days.jpg",
+    "description": "A happy little NoraFlix special made for the moments that deserve their own spotlight.",
+    "duration": "",
+    "available": true,
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "snap-days",
+    "slug": "snap-days",
+    "title": "Snap Days",
+    "subtitle": "A featured NoraFlix special coming soon",
+    "monthLabel": "Featured",
+    "year": 2026,
+    "video": "/videos/nora/snap-dayz.mp4",
+    "thumbnail": "/images/nora/featured/snap.jpg",
+    "description": "A future featured special for the little snapshots worth saving.",
+    "duration": "",
+    "available": true,
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "bbya-bblesh",
+    "slug": "bbya-bblesh",
+    "title": "Bbya & Bblesh",
+    "subtitle": "A featured NoraFlix special coming soon",
+    "monthLabel": "Featured",
+    "year": 2026,
+    "video": "/videos/nora/bbya.mp4",
+    "thumbnail": "/images/nora/featured/bbya.jpg",
+    "description": "A future featured special for Bbya and Bblesh.",
+    "duration": "",
+    "available": true,
+    "featured": true,
+    "order": 3
+  }
+]

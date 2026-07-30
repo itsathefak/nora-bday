@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { PawPrints } from "./PawPrints";
 import { FloatingParticles } from "./FloatingParticles";
 
@@ -15,6 +15,7 @@ interface HeroData {
   footerText?: string;
   backdropImage?: string;
   backdropVideo?: string;
+  backdropSlideshow?: boolean;
 }
 
 export function HeroBanner({
@@ -26,12 +27,55 @@ export function HeroBanner({
 }) {
   const [videoError, setVideoError] = useState(false);
   const [, setIsPlaying] = useState(false);
+  const [slideshowImages, setSlideshowImages] = useState<string[]>([]);
+  const [slideshowIndex, setSlideshowIndex] = useState(0);
+
+  useEffect(() => {
+    if (!data.backdropSlideshow) return;
+
+    fetch("/api/song-photos", { cache: "no-store" })
+      .then((response) => (response.ok ? response.json() : Promise.reject()))
+      .then((result: { photos?: string[] }) => {
+        setSlideshowImages(result.photos ?? []);
+        setSlideshowIndex(0);
+      })
+      .catch(() => setSlideshowImages([]));
+  }, [data.backdropSlideshow]);
+
+  useEffect(() => {
+    if (!data.backdropSlideshow || slideshowImages.length <= 1) return;
+
+    const interval = window.setInterval(() => {
+      setSlideshowIndex((current) => (current + 1) % slideshowImages.length);
+    }, 2000);
+
+    return () => window.clearInterval(interval);
+  }, [data.backdropSlideshow, slideshowImages.length]);
 
   return (
     <section className="relative w-full min-h-[72vh] md:min-h-[84vh] overflow-hidden">
       {/* Background with optional right-side video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {data.backdropVideo && !videoError ? (
+        {data.backdropSlideshow && slideshowImages.length > 0 ? (
+          <>
+            <div className="absolute right-0 top-0 h-full w-[58%] min-w-[520px] overflow-hidden z-0">
+              <AnimatePresence mode="sync">
+                <motion.img
+                  key={slideshowImages[slideshowIndex]}
+                  src={slideshowImages[slideshowIndex]}
+                  alt="Atna and Nora memory"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.95 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.75, ease: "easeInOut" }}
+                  className="absolute inset-0 h-full w-full object-cover pointer-events-none"
+                />
+              </AnimatePresence>
+            </div>
+            <div className="absolute inset-y-0 left-[32%] right-0 bg-gradient-to-r from-[#160000] via-red-950/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-[14%] bg-gradient-to-l from-[#160000]/70 to-transparent pointer-events-none" />
+          </>
+        ) : data.backdropVideo && !videoError ? (
           <>
             <video
               autoPlay

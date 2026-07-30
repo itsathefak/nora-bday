@@ -9,6 +9,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { OurSongsSection } from "./OurSongsSection";
 
 export interface MonthlyMovie {
   id: string;
@@ -627,10 +628,24 @@ function NoraMediaModal({
   );
 }
 
-export function NoraMonthlyLibrary({ movies }: { movies: MonthlyMovie[] }) {
+export function NoraMonthlyLibrary({
+  movies,
+  featuredMovies = [],
+}: {
+  movies: MonthlyMovie[];
+  featuredMovies?: MonthlyMovie[];
+}) {
   const sortedMovies = useMemo(
     () => [...movies].sort((a, b) => a.order - b.order),
     [movies],
+  );
+  const sortedFeaturedMovies = useMemo(
+    () => [...featuredMovies].sort((a, b) => a.order - b.order),
+    [featuredMovies],
+  );
+  const playableMovies = useMemo(
+    () => [...sortedFeaturedMovies, ...sortedMovies],
+    [sortedFeaturedMovies, sortedMovies],
   );
   const [selectedMovie, setSelectedMovie] = useState<MonthlyMovie | null>(null);
   const [initialPlay, setInitialPlay] = useState(false);
@@ -691,8 +706,8 @@ export function NoraMonthlyLibrary({ movies }: { movies: MonthlyMovie[] }) {
     setProgressMap((current) => ({ ...current, [progress.id]: progress }));
   };
 
-  const keepForeverMovies = sortedMovies.filter((movie) => savedIds.includes(movie.id));
-  const continueWatchingMovies = sortedMovies.filter((movie) =>
+  const keepForeverMovies = playableMovies.filter((movie) => savedIds.includes(movie.id));
+  const continueWatchingMovies = playableMovies.filter((movie) =>
     isContinueWatching(progressMap[movie.id]),
   );
   const originals: MonthlyMovie[] = [];
@@ -724,6 +739,18 @@ export function NoraMonthlyLibrary({ movies }: { movies: MonthlyMovie[] }) {
           />
         )}
 
+        {sortedFeaturedMovies.length > 0 && (
+          <MonthlyMovieRow
+            title="Featured"
+            items={sortedFeaturedMovies}
+            savedIds={savedIds}
+            progressMap={progressMap}
+            onOpen={(movie) => openMovie(movie)}
+            onPlay={(movie) => openMovie(movie, true)}
+            onToggleKeep={toggleKeep}
+          />
+        )}
+
         <MonthlyMovieRow
           title="Our Story, Month by Month"
           items={sortedMovies}
@@ -733,6 +760,8 @@ export function NoraMonthlyLibrary({ movies }: { movies: MonthlyMovie[] }) {
           onPlay={(movie) => openMovie(movie, true)}
           onToggleKeep={toggleKeep}
         />
+
+        <OurSongsSection />
 
         <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
           <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
@@ -757,7 +786,7 @@ export function NoraMonthlyLibrary({ movies }: { movies: MonthlyMovie[] }) {
 
       <NoraMediaModal
         movie={selectedMovie}
-        movies={sortedMovies}
+        movies={playableMovies}
         saved={!!selectedMovie && savedIds.includes(selectedMovie.id)}
         progress={selectedMovie ? progressMap[selectedMovie.id] : undefined}
         initialPlay={initialPlay}

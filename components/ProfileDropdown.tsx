@@ -35,6 +35,11 @@ export function ProfileDropdown() {
     closeTimeout.current = window.setTimeout(() => setOpen(false), 180);
   };
 
+  const openProfile = (profileId: string) => {
+    setOpen(false);
+    router.push(`/profile/${profileId}`);
+  };
+
   return (
     <div
       className="relative"
@@ -63,7 +68,7 @@ export function ProfileDropdown() {
         {profiles.map((p) => (
           <div
             key={p.id}
-            onClick={() => router.push(`/profile/${p.id}`)}
+            onClick={() => openProfile(p.id)}
             className="flex items-center gap-3 p-2 rounded hover:bg-white/5 cursor-pointer"
           >
             <div className="w-8 h-8 rounded-full overflow-hidden">
