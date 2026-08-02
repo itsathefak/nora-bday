@@ -19,6 +19,7 @@ export default function NoraProfilePage() {
       mediaMap={mediaMap}
       noraMonthlyMovies={monthlyMovies}
       noraFeaturedMovies={featuredMovies}
+      profile="nora"
     />
   );
 }

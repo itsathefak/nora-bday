@@ -3,8 +3,8 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
-  HEART_PING_LABELS,
   HEART_PING_PEOPLE,
+  getHeartPingLabel,
   getHeartPingRecipient,
   type HeartPingMessageType,
   type HeartPingSender,
@@ -15,7 +15,7 @@ import { saveHeartPingSummary } from "./heart-ping-history";
 
 type HeartPingStep = "choose-message" | "write-note" | "preview" | "sending" | "success" | "error";
 
-const options: {
+const baseOptions: {
   id: HeartPingMessageType;
   title: string;
   icon: string;
@@ -35,11 +35,26 @@ const options: {
   },
   {
     id: "support",
-    title: "Necky Want",
+    title: "Wanted",
     icon: "♡",
-    description: "A very serious diplomatic request for one tiny neck massage, please and thank you.",
+    description: "A tiny dramatic request for the exact kind of comfort only you can give.",
   },
 ];
+
+function getOptions(sender: HeartPingSender | null) {
+  return baseOptions.map((option) => {
+    if (!sender || option.id !== "support") return option;
+
+    return {
+      ...option,
+      title: getHeartPingLabel(sender, option.id),
+      description:
+        sender === "atna"
+          ? "A very serious diplomatic request for one tiny huggie, please and thank you."
+          : "A very serious diplomatic request for one tiny neck massage, please and thank you.",
+    };
+  });
+}
 
 function sanitizeNote(value: string) {
   return value.replace(/<[^>]*>/g, "").replace(/[<>]/g, "").slice(0, 300);
@@ -76,6 +91,7 @@ export function HeartPingModal({
   const senderName = sender ? HEART_PING_PEOPLE[sender].name : "";
   const recipientName = recipient ? HEART_PING_PEOPLE[recipient].name : "";
   const trimmedNote = sanitizeNote(note).trim();
+  const options = getOptions(sender);
   const selectedOption = options.find((option) => option.id === messageType);
   const activeSending = step === "sending";
   activeSendingRef.current = activeSending;
@@ -265,7 +281,7 @@ export function HeartPingModal({
                     <dl className="space-y-4 text-sm">
                       <div><dt className="font-black text-white">Sender</dt><dd className="mt-1 text-slate-400">{senderName}</dd></div>
                       <div><dt className="font-black text-white">Recipient</dt><dd className="mt-1 text-slate-400">{recipientName}</dd></div>
-                      <div><dt className="font-black text-white">Selected message</dt><dd className="mt-1 text-slate-400">{HEART_PING_LABELS[selectedOption.id]}</dd></div>
+                      <div><dt className="font-black text-white">Selected message</dt><dd className="mt-1 text-slate-400">{getHeartPingLabel(sender, selectedOption.id)}</dd></div>
                       <div><dt className="font-black text-white">Optional note</dt><dd className="mt-1 whitespace-pre-line text-slate-400">{trimmedNote || "No note added."}</dd></div>
                     </dl>
                   </div>

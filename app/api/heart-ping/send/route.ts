@@ -1,10 +1,10 @@
-import { access } from "node:fs/promises";
-import path from "node:path";
 import tls from "node:tls";
 import { NextRequest, NextResponse } from "next/server";
-import { renderHeartPingEmail, getHeartPingSubject, renderHeartPingText } from "../../../../emails/heart-ping-email";
+import { renderHeartPingEmail, renderHeartPingText } from "../../../../emails/heart-ping-email";
 import {
   HEART_PING_PEOPLE,
+  getHeartPingSenderDisplayName,
+  getHeartPingSubject,
   getHeartPingRecipient,
   type HeartPingMessageType,
   type HeartPingRequest,
@@ -95,31 +95,18 @@ function isAllowedOrigin(request: NextRequest) {
   }
 }
 
-async function getHeroImageUrl(messageType: HeartPingMessageType) {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
-  if (!appUrl || appUrl.includes("localhost")) return undefined;
-
-  const imageName = messageType === "miss-you" ? "miss-you" : messageType;
-  const imagePath = path.join(process.cwd(), "public", "images", "atna", "heart-ping", `${imageName}.jpg`);
-
-  try {
-    await access(imagePath);
-    return `${appUrl}/images/atna/heart-ping/${imageName}.jpg`;
-  } catch {
-    return undefined;
-  }
-}
-
 async function sendWithResend({
   to,
   subject,
   html,
   text,
+  senderDisplayName,
 }: {
   to: string;
   subject: string;
   html: string;
   text: string;
+  senderDisplayName: string;
 }) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.HEART_PING_FROM_EMAIL;
@@ -132,7 +119,7 @@ async function sendWithResend({
       "Content-Type": "application/json",
       "User-Agent": "noraflix-heart-ping/1.0",
     },
-    body: JSON.stringify({ from, to, subject, html, text }),
+    body: JSON.stringify({ from: `${senderDisplayName} <${from}>`, to, subject, html, text }),
   });
 
   if (!response.ok) {
@@ -163,16 +150,18 @@ function buildMimeMessage({
   subject,
   html,
   text,
+  senderDisplayName,
 }: {
   from: string;
   to: string;
   subject: string;
   html: string;
   text: string;
+  senderDisplayName: string;
 }) {
   const boundary = `heart-ping-${crypto.randomUUID()}`;
   return [
-    `From: NoraFlix Heart Ping <${escapeHeader(from)}>`,
+    `From: ${escapeHeader(senderDisplayName)} <${escapeHeader(from)}>`,
     `To: ${escapeHeader(to)}`,
     `Subject: ${escapeHeader(subject)}`,
     "MIME-Version: 1.0",
@@ -200,17 +189,19 @@ async function sendWithGmailSmtp({
   subject,
   html,
   text,
+  senderDisplayName,
 }: {
   to: string;
   subject: string;
   html: string;
   text: string;
+  senderDisplayName: string;
 }) {
   const user = process.env.GMAIL_SMTP_USER;
   const password = process.env.GMAIL_SMTP_APP_PASSWORD?.replace(/\s/g, "");
   if (!user || !password) return { ok: false, id: undefined };
 
-  const message = buildMimeMessage({ from: user, to, subject, html, text });
+  const message = buildMimeMessage({ from: user, to, subject, html, text, senderDisplayName });
   const auth = Buffer.from(`\0${user}\0${password}`).toString("base64");
 
   return new Promise<{ ok: boolean; id?: string }>((resolve) => {
@@ -330,7 +321,9 @@ export async function POST(request: NextRequest) {
   }
 
   const senderName = HEART_PING_PEOPLE[body.sender].name;
+  const senderDisplayName = getHeartPingSenderDisplayName(body.sender);
   const recipientName = HEART_PING_PEOPLE[recipient].name;
+  const subject = getHeartPingSubject(body.sender, body.messageType);
   const sentAt = new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",
     timeStyle: "short",
@@ -339,14 +332,15 @@ export async function POST(request: NextRequest) {
 
   const html = renderHeartPingEmail({
     senderName,
+    sender: body.sender,
     recipientName,
     messageType: body.messageType,
     note: body.note,
     sentAt,
-    heroImageUrl: await getHeroImageUrl(body.messageType),
   });
   const text = renderHeartPingText({
     senderName,
+    sender: body.sender,
     recipientName,
     messageType: body.messageType,
     note: body.note,
@@ -355,17 +349,19 @@ export async function POST(request: NextRequest) {
 
   const result = await sendWithGmailSmtp({
     to: recipientEmail,
-    subject: getHeartPingSubject(body.messageType),
+    subject,
     html,
     text,
+    senderDisplayName,
   }).then((gmailResult) =>
     gmailResult.ok
       ? gmailResult
       : sendWithResend({
           to: recipientEmail,
-          subject: getHeartPingSubject(body.messageType),
+          subject,
           html,
           text,
+          senderDisplayName,
         }),
   );
 

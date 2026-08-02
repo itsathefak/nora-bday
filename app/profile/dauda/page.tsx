@@ -19,5 +19,5 @@ export default function DaudaProfilePage() {
       };
     });
 
-  return <ProfileHomePage heroData={hero} rows={rows} mediaMap={mediaMap} />;
+  return <ProfileHomePage heroData={hero} rows={rows} mediaMap={mediaMap} profile="dauda" />;
 }

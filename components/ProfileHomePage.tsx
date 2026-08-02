@@ -10,6 +10,8 @@ import { FloatingParticles } from "./FloatingParticles";
 import { FloatingObjects } from "./FloatingObjects";
 import MediaModal from "./MediaModal";
 import NoraMonthlyLibrary, { MonthlyMovie } from "./NoraMonthlyLibrary";
+import { HiddenReminder } from "./shared/hidden-reminder";
+import type { ProfileId } from "../data/hidden-reminders";
 
 interface RowDefinition {
   id: string;
@@ -41,12 +43,14 @@ export function ProfileHomePage({
   mediaMap,
   noraMonthlyMovies,
   noraFeaturedMovies,
+  profile,
 }: {
   heroData: any;
   rows: RowDefinition[];
   mediaMap: Record<string, any>;
   noraMonthlyMovies?: MonthlyMovie[];
   noraFeaturedMovies?: MonthlyMovie[];
+  profile: ProfileId;
 }) {
   const [selectedMedia, setSelectedMedia] = React.useState<any | null>(null);
   const [modalAutoplay, setModalAutoplay] = React.useState<boolean>(false);
@@ -175,6 +179,8 @@ export function ProfileHomePage({
             ))}
           </div>
         )}
+
+        <HiddenReminder profile={profile} hidden={!!selectedMedia} />
       </main>
 
       <MediaModal

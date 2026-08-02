@@ -1,7 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useRef, useState } from "react";
+import { useState } from "react";
+import { AmbientHearts } from "./ambient-hearts";
 import { EmotionalLetterModal } from "./emotional-letter-modal";
 import { SealedEnvelope } from "./sealed-envelope";
 import { UnlockJourney } from "./unlock-journey";
@@ -27,31 +28,10 @@ export function SecretLetterSection() {
   const [journeyOpen, setJourneyOpen] = useState(false);
   const [letterOpen, setLetterOpen] = useState(false);
   const [revealing, setRevealing] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(false);
-  const audioContextRef = useRef<AudioContext | null>(null);
-
-  const playTone = useCallback((frequency: number, duration = 0.35) => {
-    if (!soundEnabled) return;
-    const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-    if (!AudioContextClass) return;
-    const context = audioContextRef.current ?? new AudioContextClass();
-    audioContextRef.current = context;
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
-    oscillator.type = "sine";
-    oscillator.frequency.value = frequency;
-    gain.gain.setValueAtTime(0.0001, context.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.045, context.currentTime + 0.04);
-    gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + duration);
-    oscillator.connect(gain).connect(context.destination);
-    oscillator.start();
-    oscillator.stop(context.currentTime + duration);
-  }, [soundEnabled]);
 
   const unlockNext = () => {
     const next = Math.min(3, locks + 1);
     setLocks(next);
-    playTone(next === 3 ? 523.25 : 293.66 + next * 55, next === 3 ? 0.7 : 0.35);
 
     if (next === 3) {
       setJourneyOpen(false);
@@ -66,7 +46,6 @@ export function SecretLetterSection() {
   const startOrOpen = () => {
     if (locks === 3) {
       setLetterOpen(true);
-      playTone(523.25, 0.55);
     } else {
       setJourneyOpen(true);
     }
@@ -76,16 +55,10 @@ export function SecretLetterSection() {
     <section className="relative isolate min-h-[900px] overflow-hidden border-t border-red-950/30 bg-[#030202] px-5 py-28 text-center sm:py-36">
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[650px] w-[850px] max-w-[110vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-950/20 blur-[110px]" />
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.055] [background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 180 180%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.8%22 numOctaves=%223%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%22.8%22/%3E%3C/svg%3E')]" />
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <AmbientHearts count={30} opacityScale={0.65} />
+      </div>
       <Dust />
-
-      <button
-        type="button"
-        onClick={() => setSoundEnabled((current) => !current)}
-        className="absolute right-5 top-6 z-10 rounded-full border border-white/10 bg-black/30 px-3 py-2 text-xs text-slate-500 transition hover:text-slate-300 sm:right-8 sm:top-8"
-        aria-label={soundEnabled ? "Mute ambient sounds" : "Enable ambient sounds"}
-      >
-        {soundEnabled ? "Sound on" : "Sound muted"}
-      </button>
 
       <div className="relative z-10 mx-auto max-w-3xl">
         <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-xs font-semibold uppercase tracking-[0.42em] text-red-300/55">Private correspondence</motion.p>

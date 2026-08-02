@@ -55,6 +55,101 @@ function isContinueWatching(progress?: ProgressRecord) {
   return percent > 5 && percent < 95 && !progress?.completed;
 }
 
+function OurLittleGallery() {
+  const [photos, setPhotos] = useState<string[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch("/api/song-photos", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((data: { photos?: string[] }) => {
+        if (cancelled) return;
+        setPhotos(Array.isArray(data.photos) ? data.photos : []);
+      })
+      .catch(() => {
+        if (!cancelled) setPhotos([]);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (photos.length <= 1) return;
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % photos.length);
+    }, 2200);
+
+    return () => window.clearInterval(interval);
+  }, [photos.length]);
+
+  const visiblePhotos = useMemo(() => {
+    if (photos.length === 0) return [];
+    return Array.from({ length: Math.min(5, photos.length) }, (_, index) => photos[(activeIndex + index) % photos.length]);
+  }, [activeIndex, photos]);
+
+  return (
+    <section className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+      <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-red-200/60">
+            A tiny moving memory shelf
+          </p>
+          <h2 className="mt-2 text-2xl font-black text-white md:text-3xl">
+            Our Little Gallery
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-400">
+            A soft little row of us, moving one memory at a time.
+          </p>
+        </div>
+        <span className="rounded-full border border-pink-200/20 bg-pink-200/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-pink-100">
+          Always Us
+        </span>
+      </div>
+
+      <div className="relative mt-6 overflow-hidden rounded-2xl bg-[radial-gradient(circle_at_50%_0%,rgba(244,114,182,0.18),transparent_38%),linear-gradient(135deg,#111,#030303)] p-4 sm:p-5">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.08),transparent_18%),radial-gradient(circle_at_82%_74%,rgba(239,68,68,0.16),transparent_24%)]" />
+
+        {visiblePhotos.length > 0 ? (
+          <div className="relative overflow-hidden">
+            <motion.div
+              key={activeIndex}
+              initial={{ x: "0%" }}
+              animate={{ x: visiblePhotos.length > 4 ? "calc(-25% - 0.25rem)" : "0%" }}
+              transition={{ duration: 0.9, ease: [0.65, 0, 0.35, 1] }}
+              className="flex gap-2 sm:gap-4"
+            >
+              {visiblePhotos.map((photo) => (
+                <motion.div
+                  key={photo}
+                  className="group relative aspect-square min-w-[calc((100%_-_1.5rem)/4)] overflow-hidden rounded-xl border border-white/10 bg-black/40 shadow-2xl sm:min-w-[calc((100%_-_3rem)/4)] sm:rounded-2xl"
+                >
+                  <img
+                    src={photo}
+                    alt="NoraFlix gallery memory"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-white/5" />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        ) : (
+          <div className="relative flex min-h-[220px] items-center justify-center rounded-xl border border-white/10 bg-black/25 text-center">
+            <p className="max-w-sm text-sm leading-7 text-slate-400">
+              Add photos to <span className="font-semibold text-slate-200">/images/bb</span> and this little gallery will come alive.
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function PlaceholderThumbnail({ movie }: { movie: MonthlyMovie }) {
   return (
     <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_65%_25%,rgba(239,68,68,0.35),transparent_34%),linear-gradient(135deg,#210305,#080808_54%,#3c0508)] p-5 text-center">
@@ -652,11 +747,13 @@ export function NoraMonthlyLibrary({
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [progressMap, setProgressMap] = useState<Record<string, ProgressRecord>>({});
   const [toastMovieId, setToastMovieId] = useState("");
+  const [storageReady, setStorageReady] = useState(false);
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem(KEEP_FOREVER_KEY);
-      setSavedIds(saved ? JSON.parse(saved) : []);
+      const parsed = saved ? JSON.parse(saved) : [];
+      setSavedIds(Array.isArray(parsed) ? parsed : []);
     } catch {
       setSavedIds([]);
     }
@@ -667,15 +764,19 @@ export function NoraMonthlyLibrary({
     } catch {
       setProgressMap({});
     }
+
+    setStorageReady(true);
   }, []);
 
   useEffect(() => {
+    if (!storageReady) return;
     localStorage.setItem(KEEP_FOREVER_KEY, JSON.stringify(savedIds));
-  }, [savedIds]);
+  }, [savedIds, storageReady]);
 
   useEffect(() => {
+    if (!storageReady) return;
     localStorage.setItem(PROGRESS_KEY, JSON.stringify(progressMap));
-  }, [progressMap]);
+  }, [progressMap, storageReady]);
 
   const toggleKeep = (movie: MonthlyMovie) => {
     if (!movie.available) return;
@@ -710,7 +811,6 @@ export function NoraMonthlyLibrary({
   const continueWatchingMovies = playableMovies.filter((movie) =>
     isContinueWatching(progressMap[movie.id]),
   );
-  const originals: MonthlyMovie[] = [];
 
   return (
     <>
@@ -763,25 +863,7 @@ export function NoraMonthlyLibrary({
 
         <OurSongsSection />
 
-        <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
-          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h2 className="text-2xl font-black text-white md:text-3xl">
-                NoraFlix Originals
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-400">
-                Future specials, trailers, best moments, birthday edits, bloopers,
-                and other NoraFlix originals will live here.
-              </p>
-            </div>
-            <span className="rounded-full border border-red-400/25 bg-red-500/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-red-100">
-              Coming Soon
-            </span>
-          </div>
-          {originals.length > 0 ? null : (
-            <div className="mt-6 aspect-[16/4] rounded-xl bg-[radial-gradient(circle_at_50%_0%,rgba(239,68,68,0.18),transparent_38%),linear-gradient(135deg,#111,#030303)]" />
-          )}
-        </section>
+        <OurLittleGallery />
       </div>
 
       <NoraMediaModal

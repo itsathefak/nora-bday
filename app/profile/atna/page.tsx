@@ -6,6 +6,8 @@ import { Header } from "../../../components/Header";
 import { HeroBanner } from "../../../components/HeroBanner";
 import { HeartPingSection } from "../../../components/atna/heart-ping-section";
 import { SecretLetterSection } from "../../../components/atna/secret-letter-section";
+import { SharedInboxSection } from "../../../components/atna/shared-inbox-section";
+import { HiddenReminder } from "../../../components/shared/hidden-reminder";
 import homeData from "../../../data/atna/home.json";
 
 export default function AtnaProfilePage() {
@@ -17,10 +19,12 @@ export default function AtnaProfilePage() {
           <FloatingParticles />
         </div>
         <Header />
-        <main className="pt-24">
+        <main className="relative z-[2] pt-24">
           <HeroBanner data={homeData.hero} />
-          <SecretLetterSection />
+          <SharedInboxSection />
           <HeartPingSection />
+          <SecretLetterSection />
+          <HiddenReminder profile="atna" />
         </main>
       </div>
     </AtnaProfileGate>

@@ -15,5 +15,5 @@ export default function PiggyProfilePage() {
     };
   });
 
-  return <ProfileHomePage heroData={hero} rows={rows} mediaMap={mediaMap} />;
+  return <ProfileHomePage heroData={hero} rows={rows} mediaMap={mediaMap} profile="piggy" />;
 }
