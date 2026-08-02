@@ -9,6 +9,8 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { BirthdayReflectionSection } from "./BirthdayReflectionSection";
+import { NoraFlixEndingButton } from "./NoraFlixEndingButton";
 import { OurSongsSection } from "./OurSongsSection";
 
 export interface MonthlyMovie {
@@ -864,6 +866,10 @@ export function NoraMonthlyLibrary({
         <OurSongsSection />
 
         <OurLittleGallery />
+
+        <BirthdayReflectionSection />
+
+        <NoraFlixEndingButton />
       </div>
 
       <NoraMediaModal

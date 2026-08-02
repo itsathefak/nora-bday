@@ -3,6 +3,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { atnaLetter } from "../../data/atna/letter-content";
+import { LetterImageBlock } from "./letter-image-block";
 
 const chapterTitles = [
   "Thank you for continuing to love an imperfect Atna",
@@ -36,6 +37,40 @@ type LetterPage = {
   paragraphs: string[];
   chapterNumber?: number;
   isPreface?: boolean;
+};
+
+const letterImagePlacements: Record<string, { imageNumbers: number[]; caption?: string }> = {
+  "“STOP OVERTHINK.”": {
+    imageNumbers: [1],
+  },
+  "Thank you for every one of them.": {
+    imageNumbers: [2],
+  },
+  "The planning took an unbelievable amount of time, creativity, effort, and sleepless nights. Looking back now, I would not change a single second of it, because seeing you happy has always been worth every bit of effort. I really wish you were there in this planning process bb, a lot of them were involved and I;m super thankful to those amazing people who helped me pull this off <3": {
+    imageNumbers: [3],
+  },
+  "You are at the centre of so much of what I create.": {
+    imageNumbers: [4],
+  },
+  "An “I love you.”": {
+    imageNumbers: [5, 6],
+  },
+  "But when we do not speak openly, the fears become louder.": {
+    imageNumbers: [12, 13],
+    caption: "I kinda feel similar to this.",
+  },
+  "One part of me felt incredibly happy because I was revisiting the best days of my life.": {
+    imageNumbers: [7],
+  },
+  "I hope you see the time.": {
+    imageNumbers: [8, 9],
+  },
+  "Sometimes a hug, a kind message, a check-in, an “I love you,” a cute emoji, or one quiet moment of real connection is enough.": {
+    imageNumbers: [10],
+  },
+  "This entire birthday took an unbelievable amount of planning, creativity, effort, patience, and time.": {
+    imageNumbers: [11],
+  },
 };
 
 function buildLetterPages() {
@@ -169,9 +204,15 @@ export function EmotionalLetterModal({ open, onClose }: { open: boolean; onClose
                       </h2>
                       <div className="mt-10 space-y-7 font-serif text-[17px] leading-[1.95] sm:text-[18px]">
                         <p className="text-2xl italic sm:text-3xl">{atnaLetter.salutation}</p>
-                        {currentParagraphs.map((paragraph) => (
-                          <div key={paragraph}>
+                        {currentParagraphs.map((paragraph, index) => (
+                          <div key={`${paragraph}-${index}`}>
                             <p className="whitespace-pre-line">{paragraph}</p>
+                            {letterImagePlacements[paragraph] && (
+                              <LetterImageBlock
+                                imageNumbers={letterImagePlacements[paragraph].imageNumbers}
+                                caption={letterImagePlacements[paragraph].caption}
+                              />
+                            )}
                           </div>
                         ))}
                       </div>
@@ -186,9 +227,15 @@ export function EmotionalLetterModal({ open, onClose }: { open: boolean; onClose
                       </h2>
                       <div className="mx-auto mt-6 h-px w-16 bg-[#9a7958]/35" />
                       <div className="mt-9 space-y-7 font-serif text-[17px] leading-[1.95] sm:text-[18px]">
-                        {currentParagraphs.map((paragraph) => (
-                          <div key={paragraph}>
+                        {currentParagraphs.map((paragraph, index) => (
+                          <div key={`${paragraph}-${index}`}>
                             <p className="whitespace-pre-line">{paragraph}</p>
+                            {letterImagePlacements[paragraph] && (
+                              <LetterImageBlock
+                                imageNumbers={letterImagePlacements[paragraph].imageNumbers}
+                                caption={letterImagePlacements[paragraph].caption}
+                              />
+                            )}
                           </div>
                         ))}
 

@@ -1,34 +1,48 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export function LetterImageBlock() {
-  const [images, setImages] = useState<string[]>([]);
+const imageExtensions = ["jpg", "jpeg", "png", "webp", "avif"];
 
-  useEffect(() => {
-    fetch("/api/song-photos", { cache: "no-store" })
-      .then((response) => (response.ok ? response.json() : Promise.reject()))
-      .then((result: { photos?: string[] }) => {
-        const photos = result.photos ?? [];
-        if (!photos.length) return;
-        const positions = [0, Math.floor(photos.length / 2), photos.length - 1];
-        setImages(positions.map((position) => photos[position]));
-      })
-      .catch(() => setImages([]));
-  }, []);
+function LetterMemoryImage({ imageNumber, index }: { imageNumber: number; index: number }) {
+  const [extensionIndex, setExtensionIndex] = useState(0);
+  const [hidden, setHidden] = useState(false);
 
-  if (!images.length) return null;
+  if (hidden) return null;
+
+  const extension = imageExtensions[extensionIndex];
+  const imagePath = `/images/letter-image/${imageNumber}.${extension}`;
+
+  return (
+    <div className={`${index % 2 === 0 ? "-rotate-1" : "rotate-1"} rounded-[1.4rem] bg-[#f8efd9] p-2 pb-6 shadow-[0_18px_40px_rgba(68,38,15,0.2)]`}>
+      <img
+        src={imagePath}
+        alt="A memory placed inside Atna's letter"
+        className="aspect-[4/5] w-full rounded-[1rem] object-cover grayscale-[8%] sepia-[10%]"
+        loading="lazy"
+        onError={() => {
+          if (extensionIndex < imageExtensions.length - 1) {
+            setExtensionIndex((current) => current + 1);
+          } else {
+            setHidden(true);
+          }
+        }}
+      />
+    </div>
+  );
+}
+
+export function LetterImageBlock({ imageNumbers, caption }: { imageNumbers: number[]; caption?: string }) {
+  if (!imageNumbers.length) return null;
 
   return (
     <figure className="my-12">
-      <div className="grid grid-cols-3 gap-2 sm:gap-4">
-        {images.map((image, index) => (
-          <div key={image} className={`${index === 1 ? "-translate-y-3 rotate-1" : index === 0 ? "-rotate-2" : "rotate-2"} bg-[#f8efd9] p-1.5 pb-5 shadow-lg sm:p-2 sm:pb-7`}>
-            <img src={image} alt="A memory of Atna and Nora" className="aspect-[4/5] w-full object-cover grayscale-[12%] sepia-[8%]" />
-          </div>
+      <div className={`mx-auto grid max-w-2xl gap-4 ${imageNumbers.length > 1 ? "grid-cols-2" : "grid-cols-1 sm:max-w-sm"}`}>
+        {imageNumbers.map((imageNumber, index) => (
+          <LetterMemoryImage key={imageNumber} imageNumber={imageNumber} index={index} />
         ))}
       </div>
-      <figcaption className="mt-5 text-center font-serif text-sm italic text-[#7a654c]">Proof that the quiet moments were never small.</figcaption>
+      {caption && <figcaption className="mt-5 text-center font-serif text-sm italic text-[#7a654c]">{caption}</figcaption>}
     </figure>
   );
 }
